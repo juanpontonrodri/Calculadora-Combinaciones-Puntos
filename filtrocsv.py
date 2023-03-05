@@ -2,7 +2,7 @@ import csv
 
 # Lista de los nombres de los archivos de entrada y salida
 input_files = ['equipo1.csv', 'equipo2.csv', 'equipo3.csv']
-output_file = 'equipos.csv'
+output_file = 'tiempos.csv'
 
 # Lista con las etiquetas de los equipos
 team_labels = ['Equipo 1:', 'Equipo 2:', 'Equipo 3:']
