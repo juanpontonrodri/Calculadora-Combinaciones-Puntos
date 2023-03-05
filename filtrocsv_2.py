@@ -42,4 +42,5 @@ for group_name, file_names in groups.items():
                 # Escribir datos de cada fila
                 for row in reader:
                     tiempo = row[5].replace(':', '')
+                    tiempo = tiempo.replace('.', '')
                     writer.writerow([row[1], tiempo, 'Equipo ' + str(i+1)])

@@ -94,10 +94,11 @@ with open(nombre_salida, 'w',encoding='utf-8', newline='') as archivo:
         writer.writerow([idx+1, equipo1, mejor_combinacion[1]])
     # Escritura de la tabla de resultados para el segundo equipo
     writer.writerow(["Combinación", "Equipo 2", "Puntuación media"])
-    for idx, mejor_combinacion in enumerate(mejores_combinaciones_medias_equipo2):
-        equipo2 = ", ".join([n[0] for n in mejor_combinacion[0]])
-        writer.writerow([idx+1, equipo1, mejor_combinacion[1]])
+    for idx2, mejor_combinacion2 in enumerate(mejores_combinaciones_medias_equipo2):
+        equipo2 = ", ".join([n[0] for n in mejor_combinacion2[0]])
+        writer.writerow([idx2+1, equipo2, mejor_combinacion2[1]])
+        
     writer.writerow(["Combinación", "Equipo 3", "Puntuación media"])
-    for idx, mejor_combinacion in enumerate(mejores_combinaciones_medias_equipo3):
-        equipo1 = ", ".join([n[0] for n in mejor_combinacion[0]])
-        writer.writerow([idx+1, equipo1, mejor_combinacion[1]])
+    for idx3, mejor_combinacion3 in enumerate(mejores_combinaciones_medias_equipo3):
+        equipo3 = ", ".join([n[0] for n in mejor_combinacion3[0]])
+        writer.writerow([idx3+1, equipo3, mejor_combinacion3[1]])
