@@ -72,7 +72,7 @@ puntuaciones_medias.sort(key=lambda x: x[1], reverse=True)
 mejores_combinaciones_medias = puntuaciones_medias[:6]
 
 # Escritura de la tabla de resultados para la primera parte del problema en el archivo de salida
-with open(args.archivo_salida, 'w', newline='') as archivo:
+with open(args.archivo_salida, 'w',encoding='utf-8', newline='') as archivo:
     writer = csv.writer(archivo)
     writer.writerow(["Combinación", "Equipo 1", "Equipo 2", "Equipo 3", "Puntuación"])
     for idx, mejor_combinacion in enumerate(mejores_combinaciones):
@@ -82,7 +82,7 @@ with open(args.archivo_salida, 'w', newline='') as archivo:
         writer.writerow([idx+1, equipo1, equipo2, equipo3, max_puntuacion])
 
 # Escritura de la tabla de resultados para la segunda parte del problema en un archivo de salida diferente
-with open(args.archivo_salida, 'a', newline='') as archivo:
+with open(args.archivo_salida, 'a',encoding='utf-8', newline='') as archivo:
     writer = csv.writer(archivo)
     writer.writerow('\n')
     writer.writerow(["Combinación", "Equipo 1", "Puntuación media"])
