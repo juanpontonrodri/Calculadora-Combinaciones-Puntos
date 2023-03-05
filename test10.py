@@ -5,7 +5,6 @@ import csv
 parser = argparse.ArgumentParser(description='Encuentra la mejor combinación de nadadores.')
 parser.add_argument('archivo_entrada', type=str, help='Archivo de texto con los tiempos de los nadadores')
 parser.add_argument('archivo_salida', type=str, help='Archivo donde se guardará la tabla con los resultados')
-parser.add_argument('archivo_salida_media', type=str, help='Archivo donde se guardará la tabla con los resultados de media')
 
 
 
@@ -83,8 +82,9 @@ with open(args.archivo_salida, 'w', newline='') as archivo:
         writer.writerow([idx+1, equipo1, equipo2, equipo3, max_puntuacion])
 
 # Escritura de la tabla de resultados para la segunda parte del problema en un archivo de salida diferente
-with open(args.archivo_salida_media, 'w', newline='') as archivo2:
-    writer = csv.writer(archivo2)
+with open(args.archivo_salida, 'a', newline='') as archivo:
+    writer = csv.writer(archivo)
+    writer.writerow('\n')
     writer.writerow(["Combinación", "Equipo 1", "Puntuación media"])
     for idx, mejor_combinacion in enumerate(mejores_combinaciones_medias):
         equipo1 = ", ".join([n[0] for n in mejor_combinacion[0]])
