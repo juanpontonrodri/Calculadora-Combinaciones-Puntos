@@ -1,0 +1,7 @@
+Combinación		Equipo 1		Equipo 2		Equipo 3		Puntuación		Puntuación media
+1		Juan, Javier		Sara, Maria		Juan, Javier, Sara, Maria, Pedro, Pablo		11		10.0
+2		Javier, Luis		Sara, Maria		Javier, Luis, Sara, Maria, Pedro, Pablo		11		7.0
+3		Javier, Antonio		Sara, Maria		Javier, Antonio, Sara, Maria, Pedro, Pablo		11		7.0
+4		Javier, Odei		Sara, Maria		Javier, Odei, Sara, Maria, Pedro, Pablo		11		7.0
+5		Javier, Conde		Sara, Maria		Javier, Conde, Sara, Maria, Pedro, Pablo		11		7.0
+6		Juan, Luis		Sara, Maria		Juan, Luis, Sara, Maria, Pedro, Pablo		11		6.0
