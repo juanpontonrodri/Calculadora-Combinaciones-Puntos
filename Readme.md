@@ -13,3 +13,15 @@ el test15.py se ejecuta con parametro series/la serie y crea los resultados en l
 
 series/50_esp_masc_tiempos.csv
 series/100_esp_masc_tiempos.csv
+
+Falta:
+-Crear una estructura facilmente comparable para saber si un nadador ha participado en otra serie(una lista con todos los nadadores y el numero de pruebas en las q participan, este registro se reinica cada vez que se haga una nueva combinacion)
+-Creamos combinaciones posibles entre los nadadores presentados a cada prueba.
+-Iniciamos con la primera combinacion:  
+        Segunda
+            Tercera
+                Aqui repetimos el procedimiento para la segunda serie
+                    1eq Se busca en la lista q tenga de key el nombre de nadador el parametro de contador, si es un 1 se salta a la siguiente combinacion
+                        2eq Se busca en la lista q tenga de key el nombre de nadador el parametro de contador, si es un 1 se salta a la siguiente combinacion
+                            3eq Se busca en la lista q tenga de key el nombre de nadador el parametro de contador, si es un 1 se salta a la siguiente combinacion
+                                Sumamos puntuacion equipo 1 y guardamos la combinacion de todos los nadadores si es la mas alta encontrada
