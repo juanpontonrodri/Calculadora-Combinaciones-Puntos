@@ -14,6 +14,13 @@ el test15.py se ejecuta con parametro series/la serie y crea los resultados en l
 series/50_esp_masc_tiempos.csv
 series/100_esp_masc_tiempos.csv
 
+Para añadir a las versiones de prubeas individuales:
+-Seleccionar el numero de combinacion del equipo 1 de la lista de medias y que te de el outpt de todas las combinaciones posibles con esos dos nadadores
+ordenadas de menor a mayor puntuacion.
+
+
+
+
 Falta:
 -Crear una estructura facilmente comparable para saber si un nadador ha participado en otra serie(una lista con todos los nadadores y el numero de pruebas en las q participan, este registro se reinica cada vez que se haga una nueva combinacion)
 -Creamos combinaciones posibles entre los nadadores presentados a cada prueba.
