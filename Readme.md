@@ -10,3 +10,6 @@ El archivo bestoption.py imprime por pantalla la mejor opcion para anar a cada c
 
 ejecutamos filtrocsv_2 sin parametros y coge de la carpeta tiempos los tiempos de los 3 equipos. luego deja las series en la carpeta series
 el test15.py se ejecuta con parametro series/la serie y crea los resultados en la carpeta medias
+
+series/50_esp_masc_tiempos.csv
+series/100_esp_masc_tiempos.csv

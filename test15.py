@@ -7,7 +7,7 @@ parser.add_argument('archivo_entrada', type=str, help='Archivo de texto con los 
 
 
 args = parser.parse_args()
-nombre_salida="./medias/"+args.archivo_entrada[7:-4] + ".csv"
+nombre_salida="./medias/"+args.archivo_entrada[7:-12] + ".csv"
 # Lectura de tiempos de archivo CSV
 equipos = {}
 with open(args.archivo_entrada, newline='') as archivo:
