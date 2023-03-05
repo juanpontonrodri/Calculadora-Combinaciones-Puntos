@@ -7,3 +7,6 @@ El archivo test13.py toma como entrada tiempos.csv y calcula las 10 mejores punt
 El uso es pyhton3 test13.py tiempos.csv media.csv
 De esta forma se pueden cambiar los nombres de los archivos de ssalida
 El archivo bestoption.py imprime por pantalla la mejor opcion para anar a cada club teniendo como input el media.csv. Tambien tiene la opcion de imprimir al fondo de media.csv las mejores opcionesss
+
+ejecutamos filtrocsv_2 sin parametros y coge de la carpeta tiempos los tiempos de los 3 equipos. luego deja las series en la carpeta series
+el test15.py se ejecuta con parametro series/la serie y crea los resultados en la carpeta medias
