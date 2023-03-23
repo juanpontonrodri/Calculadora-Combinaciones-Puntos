@@ -43,4 +43,10 @@ for group_name, file_names in groups.items():
                 for row in reader:
                     tiempo = row[5].replace(':', '')
                     tiempo = tiempo.replace('.', '')
-                    writer.writerow([row[1], tiempo, 'Equipo ' + str(i+1)])
+                    if i==0:
+                        writer.writerow([row[1], tiempo, "MOLEMOS"])
+                    if i==1:
+                        writer.writerow([row[1], tiempo, "BOIRO"])
+                    if i==2:
+                        writer.writerow([row[1], tiempo, "RIAS"])
+                    

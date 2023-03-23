@@ -1,0 +1,13 @@
+Para crear una estructura de datos en Python que represente los equipos con sus nadadores y tiempos, puedes utilizar un diccionario de diccionarios.
+
+El diccionario principal tendrá como claves los nombres de los equipos, y cada valor será otro diccionario con claves para los nombres de los nadadores y valores para los tiempos en cada prueba.
+
+Aquí tienes un ejemplo de cómo podrías crear esta estructura para representar los datos que mencionaste en tu pregunta:
+
+python
+Copy code
+equipos = {
+    "Equipo 1": {
+        "ARIAS FRANCO, ODEI": {"50_esp_masc": 2781, "100_esp_masc": 5802},
+        "PONTON RODRIGUEZ, JAVIER": {"50_esp_masc": 2870},
+        "REGUEIRA MOURE, ANDER": {"50_esp_masc": 3629},
