@@ -3,7 +3,9 @@
 import pandas as pd
 import os
 from itertools import combinations,product
+import time
 
+start_time = time.time()
 
 folder_path = './series/'
 
@@ -77,11 +79,14 @@ print("##Combinaciones creadas##")
 prueba_1="100_esp_masc" 
 prueba_2="200_esp_masc"
                        
-          
+c=0
+numero_combinaciones_MOLEMOS = len(combinaciones_equipo_prueba[('MOLEMOS', prueba_1)]) * len(combinaciones_equipo_prueba[('MOLEMOS', prueba_2)])          
+numero_combinaciones_totales = numero_combinaciones_MOLEMOS * len(combinaciones_equipo_prueba[('BOIRO', prueba_1)]) * len(combinaciones_equipo_prueba[('BOIRO', prueba_2)]) * len(combinaciones_equipo_prueba[('RIAS', prueba_1)]) * len(combinaciones_equipo_prueba[('RIAS', prueba_2)])
 puntuaciones = {}
 for comb_MOLEMOS_p1 in combinaciones_equipo_prueba[('MOLEMOS', prueba_1)]:
     for comb_MOLEMOS_p2 in combinaciones_equipo_prueba[('MOLEMOS', prueba_2)]:
-        print(comb_MOLEMOS_p1, comb_MOLEMOS_p2)
+        c+=1
+        print("Combinación número %d de %d %s %s" % (c, numero_combinaciones_MOLEMOS, comb_MOLEMOS_p1, comb_MOLEMOS_p2))
         puntuaciones_MOLEMOS = []
         if set(comb_MOLEMOS_p1) & set(comb_MOLEMOS_p2):
             continue
@@ -136,3 +141,11 @@ for comb_MOLEMOS_p1 in combinaciones_equipo_prueba[('MOLEMOS', prueba_1)]:
 mejores_combinaciones = [k for k, v in puntuaciones.items() if v == max(puntuaciones.values())]
 
 print(mejores_combinaciones)
+
+
+
+end_time=time.time()
+
+print()
+print("Numero de combinaciones totales: ",numero_combinaciones_totales)
+print("Tiempo de ejecución: ",end_time-start_time)
