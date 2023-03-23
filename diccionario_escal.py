@@ -1,11 +1,23 @@
 import pandas as pd
+import os
 
-# Definir las pruebas y sus archivos
-pruebas_archivos = {"50_esp_masc": "series/50_esp_masc_tiempos.csv", "100_esp_masc": "series/100_esp_masc_tiempos.csv", "200_esp_masc": "series/200_esp_masc_tiempos.csv"}
+folder_path = './series/'
+
+# Obtener los nombres de los archivos en la carpeta
+file_names = os.listdir(folder_path)
+
+# Crear un diccionario para almacenar las pruebas y sus archivos
+pruebas_archivos = {}
+
+# Agregar cada archivo al diccionario con el nombre de la prueba como clave
+for name in file_names:
+    # Obtener el nombre de la prueba a partir del nombre del archivo
+    prueba_name = name.split('_tiempos')[0]
+    # Agregar la prueba y su archivo al diccionario
+    pruebas_archivos[prueba_name] = folder_path + name
 
 # Obtener la lista de nombres de prueba
 nombre_prueba = list(pruebas_archivos.keys())
-
 # Leer los archivos CSV y guardar los tiempos de cada nadador
 diccionario = {}
 for prueba, archivo in pruebas_archivos.items():
