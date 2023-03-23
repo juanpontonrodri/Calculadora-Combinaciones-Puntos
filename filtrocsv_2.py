@@ -30,12 +30,14 @@ for group_name, file_names in groups.items():
         writer = csv.writer(f_out)
 
         # Escribir encabezado
-        writer.writerow(['Nombre', 'Tiempo', 'Equipo'])
+        writer.writerow(['Nombre', 'Tiempo', 'Equipo', 'Prueba'])
 
         # Iterar sobre los archivos de entrada del grupo
         for i, input_file in enumerate(sorted(file_names)):
-            # Resto del código aquí...
             # Leer datos del archivo de entrada
+            print(input_file)
+            nombre_prueba = input_file[:-6]
+            
             with open(os.path.join(folder_path, input_file), 'r', encoding='utf-8-sig') as f_in:
                 reader = csv.reader(f_in)
 
@@ -44,9 +46,10 @@ for group_name, file_names in groups.items():
                     tiempo = row[5].replace(':', '')
                     tiempo = tiempo.replace('.', '')
                     if i==0:
-                        writer.writerow([row[1], tiempo, "MOLEMOS"])
+                        writer.writerow([row[1], tiempo, "MOLEMOS", nombre_prueba])
                     if i==1:
-                        writer.writerow([row[1], tiempo, "BOIRO"])
+                        writer.writerow([row[1], tiempo, "BOIRO",nombre_prueba])
                     if i==2:
-                        writer.writerow([row[1], tiempo, "RIAS"])
+                        writer.writerow([row[1], tiempo, "RIAS",nombre_prueba])
+                        
                     

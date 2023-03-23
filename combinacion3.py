@@ -67,4 +67,7 @@ for prueba in diccionario[equipo]:
    # Bucle para recorrer los nadadores de cada prueba
     for nadador in diccionario[equipo][prueba]:
         print(prueba,nadador,diccionario[equipo][prueba][nadador])
+        
+        
+print("\n\n\n",diccionario["MOLEMOS"]["50m espalda"]["ARIAS FRANCO, ODEI"])
 
