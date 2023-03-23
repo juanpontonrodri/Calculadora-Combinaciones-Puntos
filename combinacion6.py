@@ -86,11 +86,12 @@ print(f"Tiempo de {nadador2}: {diccionario[equipo][prueba][nadador2][0]}")
 
  """
 
-# Diccionario para almacenar las combinaciones por equipo y prueba
-combinaciones_equipo_prueba = {}
+
 
 prueba_analizar = "200_esp_masc"
 
+# Diccionario para almacenar las combinaciones por equipo y prueba
+combinaciones_equipo_prueba = {}
 
 for equipo, pruebas in diccionario.items():
     
@@ -122,8 +123,11 @@ combinaciones_RIAS = combinaciones_equipo_prueba[("RIAS", prueba_analizar)]
 #para coger solo dos combinaciones de cada equipo:
 #combinaciones_totales = list(product(combinaciones_BOIRO[:2], combinaciones_RIAS[:2]))
 combinaciones_totales = list(product(combinaciones_BOIRO, combinaciones_RIAS))
-# Imprimir las combinaciones totales
-    
+
+
+#Necesito iterar para cada combinacion de el monforte, todas las de los otros equipos
+
+
 
 for i, comb in enumerate(combinaciones_totales):
     
@@ -159,10 +163,9 @@ for i, comb in enumerate(combinaciones_totales):
     puntos_boiro=puntos0+puntos1
 
     puntos_rias=puntos2+puntos3
-    if(puntos_boiro>=7) & (puntos_rias>=3):
+    """ if(puntos_boiro>=3) & (puntos_rias>=3):
         
 
         print(f"Combinación {i + 1}: {comb} Puntos BOIRO: {puntos_boiro} Puntos RIAS: {puntos_rias}")
-
-
-    
+ """
+ 
