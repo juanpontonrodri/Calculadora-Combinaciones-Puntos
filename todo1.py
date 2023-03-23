@@ -3,14 +3,15 @@ import itertools
 import csv
 
 parser = argparse.ArgumentParser(description='Encuentra la mejor combinación de nadadores.')
-parser.add_argument('archivo_entrada', type=str, help='Archivo de texto con los tiempos de los nadadores')
+parser.add_argument('serie1', type=str, help='Archivo de texto con los tiempos de los nadadores')
+parser.add_argument('serie2', type=str, help='Archivo de texto con los tiempos de los nadadores')
 
 
 args = parser.parse_args()
 nombre_salida="./todo/"+"todo1" + ".csv"
 # Lectura de tiempos de archivo CSV
 equipos = {}
-with open(args.archivo_entrada, newline='') as archivo:
+with open(args.serie1, newline='') as archivo:
     lector = csv.DictReader(archivo)
     for fila in lector:
         nombre = fila['Nombre']
