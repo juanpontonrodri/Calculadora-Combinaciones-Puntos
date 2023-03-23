@@ -19,17 +19,14 @@ Para añadir a las versiones de prubeas individuales:
 ordenadas de menor a mayor puntuacion.
 -Además, mostrar el porcentaje de veces que obtienen cada puntuacion para saber las posibilidades q tiene de ganar
 
+Medidas de optimización:
+-Usar listas de comprension
+-Usar funciones lambda
+-Modifciar las estructurasd de datos para que sean mas eficientes(usar sets en vez de listas)
+-Usar numpy 
+-Optimizar las sumas
 
 
 
-Falta:
--Crear una estructura facilmente comparable para saber si un nadador ha participado en otra serie(una lista con todos los nadadores y el numero de pruebas en las q participan, este registro se reinica cada vez que se haga una nueva combinacion)
--Creamos combinaciones posibles entre los nadadores presentados a cada prueba.
--Iniciamos con la primera combinacion:  
-        Segunda
-            Tercera
-                Aqui repetimos el procedimiento para la segunda serie
-                    1eq Se busca en la lista q tenga de key el nombre de nadador el parametro de contador, si es un 1 se salta a la siguiente combinacion
-                        2eq Se busca en la lista q tenga de key el nombre de nadador el parametro de contador, si es un 1 se salta a la siguiente combinacion
-                            3eq Se busca en la lista q tenga de key el nombre de nadador el parametro de contador, si es un 1 se salta a la siguiente combinacion
-                                Sumamos puntuacion equipo 1 y guardamos la combinacion de todos los nadadores si es la mas alta encontrada
+
+

@@ -1,9 +1,11 @@
-#usadno numpy
-import numpy as np
+#optimizado usdano product en la parte de los otros dos clubs
+
 import pandas as pd
 import os
 from itertools import combinations,product
+import time
 
+start_time = time.time()
 
 folder_path = './series/'
 
@@ -76,12 +78,15 @@ print("##Combinaciones creadas##")
                          
 prueba_1="100_esp_masc" 
 prueba_2="200_esp_masc"
-   
+                       
+c=0
+numero_combinaciones_MOLEMOS = len(combinaciones_equipo_prueba[('MOLEMOS', prueba_1)]) * len(combinaciones_equipo_prueba[('MOLEMOS', prueba_2)])          
+numero_combinaciones_totales = numero_combinaciones_MOLEMOS * len(combinaciones_equipo_prueba[('BOIRO', prueba_1)]) * len(combinaciones_equipo_prueba[('BOIRO', prueba_2)]) * len(combinaciones_equipo_prueba[('RIAS', prueba_1)]) * len(combinaciones_equipo_prueba[('RIAS', prueba_2)])
 puntuaciones = {}
 for comb_MOLEMOS_p1 in combinaciones_equipo_prueba[('MOLEMOS', prueba_1)]:
-    puntuaciones_MOLEMOS = []
     for comb_MOLEMOS_p2 in combinaciones_equipo_prueba[('MOLEMOS', prueba_2)]:
-        print(comb_MOLEMOS_p1, comb_MOLEMOS_p2)
+        c+=1
+        print("Combinación número %d de %d %s %s" % (c, numero_combinaciones_MOLEMOS, comb_MOLEMOS_p1, comb_MOLEMOS_p2))
         puntuaciones_MOLEMOS = []
         if set(comb_MOLEMOS_p1) & set(comb_MOLEMOS_p2):
             continue
@@ -89,20 +94,13 @@ for comb_MOLEMOS_p1 in combinaciones_equipo_prueba[('MOLEMOS', prueba_1)]:
             if set(comb_BOIRO_p1) & set(comb_BOIRO_p2) or set(comb_RIAS_p1) & set(comb_RIAS_p2):
                 continue
             
-            # Calcular puntuación
-            tiempos_MOLEMOS_p1 = np.array([diccionario['MOLEMOS'][prueba_1][nadador][0] for nadador in comb_MOLEMOS_p1])
-            tiempos_MOLEMOS_p2 = np.array([diccionario['MOLEMOS'][prueba_2][nadador][0] for nadador in comb_MOLEMOS_p2])
-            tiempos_BOIRO_p1 = np.array([diccionario['BOIRO'][prueba_1][nadador][0] for nadador in comb_BOIRO_p1])
-            tiempos_BOIRO_p2 = np.array([diccionario['BOIRO'][prueba_2][nadador][0] for nadador in comb_BOIRO_p2])
-            tiempos_RIAS_p1 = np.array([diccionario['RIAS'][prueba_1][nadador][0] for nadador in comb_RIAS_p1])
-            tiempos_RIAS_p2 = np.array([diccionario['RIAS'][prueba_2][nadador][0] for nadador in comb_RIAS_p2])
-
-            tiempos_prueba1 = [(tiempo, 'MOLEMOS') for tiempo in tiempos_MOLEMOS_p1] + [(tiempo, 'BOIRO') for tiempo in tiempos_BOIRO_p1] + [(tiempo, 'RIAS') for tiempo in tiempos_RIAS_p1]
-            tiempos_prueba2 = [(tiempo, 'MOLEMOS') for tiempo in tiempos_MOLEMOS_p2] + [(tiempo, 'BOIRO') for tiempo in tiempos_BOIRO_p2] + [(tiempo, 'RIAS') for tiempo in tiempos_RIAS_p2]
-
-            tiempos_prueba1_ordenados = sorted(tiempos_prueba1, key=lambda x: x[0])
-            tiempos_prueba2_ordenados = sorted(tiempos_prueba2, key=lambda x: x[0])
-
+                                    # Calcular puntuación
+            tiempos_MOLEMOS_p1 = [diccionario['MOLEMOS'][prueba_1][nadador][0] for nadador in comb_MOLEMOS_p1]
+            tiempos_MOLEMOS_p2 = [diccionario['MOLEMOS'][prueba_2][nadador][0] for nadador in comb_MOLEMOS_p2]
+            tiempos_BOIRO_p1 = [diccionario['BOIRO'][prueba_1][nadador][0] for nadador in comb_BOIRO_p1]
+            tiempos_BOIRO_p2 = [diccionario['BOIRO'][prueba_2][nadador][0] for nadador in comb_BOIRO_p2]
+            tiempos_RIAS_p1 = [diccionario['RIAS'][prueba_1][nadador][0] for nadador in comb_RIAS_p1]
+            tiempos_RIAS_p2 = [diccionario['RIAS'][prueba_2][nadador][0] for nadador in comb_RIAS_p2]
             puntos_MOLEMOS_p1 = 0
             puntos_MOLEMOS_p2 = 0
             puntos_BOIRO_p1 = 0
@@ -110,6 +108,12 @@ for comb_MOLEMOS_p1 in combinaciones_equipo_prueba[('MOLEMOS', prueba_1)]:
             puntos_RIAS_p1 = 0
             puntos_RIAS_p2 = 0
 
+            tiempos_prueba1 = [(tiempo, 'MOLEMOS') for tiempo in tiempos_MOLEMOS_p1] + [(tiempo, 'BOIRO') for tiempo in tiempos_BOIRO_p1] + [(tiempo, 'RIAS') for tiempo in tiempos_RIAS_p1]
+            tiempos_prueba2 = [(tiempo, 'MOLEMOS') for tiempo in tiempos_MOLEMOS_p2] + [(tiempo, 'BOIRO') for tiempo in tiempos_BOIRO_p2] + [(tiempo, 'RIAS') for tiempo in tiempos_RIAS_p2]
+            
+            tiempos_prueba1_ordenados = sorted(tiempos_prueba1, key=lambda x: x[0])
+            tiempos_prueba2_ordenados = sorted(tiempos_prueba2, key=lambda x: x[0])
+            
             for i, nadador in enumerate(tiempos_prueba1_ordenados):
                 if nadador[1] == 'MOLEMOS':
                     puntos_MOLEMOS_p1 += 6 - i
@@ -117,7 +121,7 @@ for comb_MOLEMOS_p1 in combinaciones_equipo_prueba[('MOLEMOS', prueba_1)]:
                     puntos_BOIRO_p1 += 6 - i
                 else:
                     puntos_RIAS_p1 += 6 - i
-
+                    
             for i, nadador in enumerate(tiempos_prueba2_ordenados):
                 if nadador[1] == 'MOLEMOS':
                     puntos_MOLEMOS_p2 += 6 - i
@@ -125,12 +129,7 @@ for comb_MOLEMOS_p1 in combinaciones_equipo_prueba[('MOLEMOS', prueba_1)]:
                     puntos_BOIRO_p2 += 6 - i
                 else:
                     puntos_RIAS_p2 += 6 - i
-            puntos_MOLEMOS_p1 = np.sum(6 - np.argsort(tiempos_MOLEMOS_p1))
-            puntos_MOLEMOS_p2 = np.sum(6 - np.argsort(tiempos_MOLEMOS_p2))
-            puntos_BOIRO_p1 = np.sum(6 - np.argsort(tiempos_BOIRO_p1))
-            puntos_BOIRO_p2 = np.sum(6 - np.argsort(tiempos_BOIRO_p2))
-            puntos_RIAS_p1 = np.sum(6 - np.argsort(tiempos_RIAS_p1))
-            puntos_RIAS_p2 = np.sum(6 - np.argsort(tiempos_RIAS_p2))
+
             puntuacion_MOLEMOS = puntos_MOLEMOS_p1 + puntos_MOLEMOS_p2
             puntuacion_BOIRO = puntos_BOIRO_p1 + puntos_BOIRO_p2
             puntuacion_RIAS = puntos_RIAS_p1 + puntos_RIAS_p2
@@ -142,3 +141,11 @@ for comb_MOLEMOS_p1 in combinaciones_equipo_prueba[('MOLEMOS', prueba_1)]:
 mejores_combinaciones = [k for k, v in puntuaciones.items() if v == max(puntuaciones.values())]
 
 print(mejores_combinaciones)
+
+
+
+end_time=time.time()
+
+print()
+print("Numero de combinaciones totales: ",numero_combinaciones_totales)
+print("Tiempo de ejecución: ",end_time-start_time)
