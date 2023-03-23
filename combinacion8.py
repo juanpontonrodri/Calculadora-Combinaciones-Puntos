@@ -1,8 +1,32 @@
-#a machete
 
+#intento de optimizacion
 import pandas as pd
 import os
 from itertools import combinations,product
+
+
+def obtener_combinaciones_equipos(prueba, diccionario):
+    combinaciones_equipo_prueba = {}
+    equipos = diccionario.keys()
+    for equipo in equipos:
+        combinaciones_prueba = []
+        nombres_nadadores = list(diccionario[equipo][prueba].keys())
+        combinaciones_nadadores = list(combinations(nombres_nadadores, 2))
+        for comb_nadadores in combinaciones_nadadores:
+            combinaciones_prueba.append(comb_nadadores)
+        combinaciones_equipo_prueba[(equipo, prueba)] = combinaciones_prueba
+        
+    combinaciones_prueba1 = []
+    combinaciones_prueba2 = []
+    for equipo, combinaciones in combinaciones_equipo_prueba.items():
+        for i, comb_nadadores in enumerate(combinaciones):
+            if i % 2 == 0:
+                combinaciones_prueba1.append((equipo, comb_nadadores))
+            else:
+                combinaciones_prueba2.append((equipo, comb_nadadores))
+    
+    print(combinaciones_prueba1)            
+    return combinaciones_prueba1, combinaciones_prueba2
 
 
 folder_path = './series/'
@@ -76,21 +100,31 @@ print("##Combinaciones creadas##")
                          
 prueba_1="100_esp_masc" 
 prueba_2="200_esp_masc"
+
+combinaciones_p1, combinaciones_p2 = obtener_combinaciones_equipos(prueba_1, diccionario)
+
+combinaciones_MOLEMOS_p1 = [(e, c) for e, c in combinaciones_p1 if e == "MOLEMOS"]
+combinaciones_MOLEMOS_p2 = [(e, c) for e, c in combinaciones_p2 if e == "MOLEMOS"]
+combinaciones_BOIRO_p1 = [(e, c) for e, c in combinaciones_p1 if e == "BOIRO"]
+combinaciones_BOIRO_p2 = [(e, c) for e, c in combinaciones_p2 if e == "BOIRO"]
+combinaciones_RIAS_p1 = [(e, c) for e, c in combinaciones_p1 if e == "RIAS"]
+combinaciones_RIAS_p2 = [(e, c) for e, c in combinaciones_p2 if e == "RIAS"]
+
                        
           
 puntuaciones = {}
-for comb_MOLEMOS_p1 in combinaciones_equipo_prueba[('MOLEMOS', prueba_1)]:
-    for comb_MOLEMOS_p2 in combinaciones_equipo_prueba[('MOLEMOS', prueba_2)]:
+for comb_MOLEMOS_p1 in combinaciones_MOLEMOS_p1:
+    for comb_MOLEMOS_p2 in combinaciones_MOLEMOS_p2:
         print(comb_MOLEMOS_p1, comb_MOLEMOS_p2)
         puntuaciones_MOLEMOS = []
         if set(comb_MOLEMOS_p1) & set(comb_MOLEMOS_p2):
             continue
-        for comb_BOIRO_p1 in combinaciones_equipo_prueba[('BOIRO', prueba_1)]:
-            for comb_BOIRO_p2 in combinaciones_equipo_prueba[('BOIRO', prueba_2)]:
+        for comb_BOIRO_p1 in combinaciones_BOIRO_p1:
+            for comb_BOIRO_p2 in combinaciones_BOIRO_p2:
                 if set(comb_BOIRO_p1) & set(comb_BOIRO_p2):
                     continue
-                for comb_RIAS_p1 in combinaciones_equipo_prueba[('RIAS', prueba_1)]:
-                    for comb_RIAS_p2 in combinaciones_equipo_prueba[('RIAS', prueba_2)]:
+                for comb_RIAS_p1 in combinaciones_RIAS_p1:
+                    for comb_RIAS_p2 in combinaciones_RIAS_p2:
                         if set(comb_RIAS_p1) & set(comb_RIAS_p2):
                             continue
                         

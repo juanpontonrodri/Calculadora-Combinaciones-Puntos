@@ -1,4 +1,4 @@
-#a machete
+#optimizado usdano product en la parte de los otros dos clubs
 
 import pandas as pd
 import os
@@ -85,55 +85,50 @@ for comb_MOLEMOS_p1 in combinaciones_equipo_prueba[('MOLEMOS', prueba_1)]:
         puntuaciones_MOLEMOS = []
         if set(comb_MOLEMOS_p1) & set(comb_MOLEMOS_p2):
             continue
-        for comb_BOIRO_p1 in combinaciones_equipo_prueba[('BOIRO', prueba_1)]:
-            for comb_BOIRO_p2 in combinaciones_equipo_prueba[('BOIRO', prueba_2)]:
-                if set(comb_BOIRO_p1) & set(comb_BOIRO_p2):
-                    continue
-                for comb_RIAS_p1 in combinaciones_equipo_prueba[('RIAS', prueba_1)]:
-                    for comb_RIAS_p2 in combinaciones_equipo_prueba[('RIAS', prueba_2)]:
-                        if set(comb_RIAS_p1) & set(comb_RIAS_p2):
-                            continue
-                        
-                                                # Calcular puntuación
-                        tiempos_MOLEMOS_p1 = [diccionario['MOLEMOS'][prueba_1][nadador][0] for nadador in comb_MOLEMOS_p1]
-                        tiempos_MOLEMOS_p2 = [diccionario['MOLEMOS'][prueba_2][nadador][0] for nadador in comb_MOLEMOS_p2]
-                        tiempos_BOIRO_p1 = [diccionario['BOIRO'][prueba_1][nadador][0] for nadador in comb_BOIRO_p1]
-                        tiempos_BOIRO_p2 = [diccionario['BOIRO'][prueba_2][nadador][0] for nadador in comb_BOIRO_p2]
-                        tiempos_RIAS_p1 = [diccionario['RIAS'][prueba_1][nadador][0] for nadador in comb_RIAS_p1]
-                        tiempos_RIAS_p2 = [diccionario['RIAS'][prueba_2][nadador][0] for nadador in comb_RIAS_p2]
-                        puntos_MOLEMOS_p1 = 0
-                        puntos_MOLEMOS_p2 = 0
-                        puntos_BOIRO_p1 = 0
-                        puntos_BOIRO_p2 = 0
-                        puntos_RIAS_p1 = 0
-                        puntos_RIAS_p2 = 0
+        for comb_BOIRO_p1, comb_BOIRO_p2, comb_RIAS_p1, comb_RIAS_p2 in product(combinaciones_equipo_prueba[('BOIRO', prueba_1)], combinaciones_equipo_prueba[('BOIRO', prueba_2)], combinaciones_equipo_prueba[('RIAS', prueba_1)], combinaciones_equipo_prueba[('RIAS', prueba_2)]):
+            if set(comb_BOIRO_p1) & set(comb_BOIRO_p2) or set(comb_RIAS_p1) & set(comb_RIAS_p2):
+                continue
+            
+                                    # Calcular puntuación
+            tiempos_MOLEMOS_p1 = [diccionario['MOLEMOS'][prueba_1][nadador][0] for nadador in comb_MOLEMOS_p1]
+            tiempos_MOLEMOS_p2 = [diccionario['MOLEMOS'][prueba_2][nadador][0] for nadador in comb_MOLEMOS_p2]
+            tiempos_BOIRO_p1 = [diccionario['BOIRO'][prueba_1][nadador][0] for nadador in comb_BOIRO_p1]
+            tiempos_BOIRO_p2 = [diccionario['BOIRO'][prueba_2][nadador][0] for nadador in comb_BOIRO_p2]
+            tiempos_RIAS_p1 = [diccionario['RIAS'][prueba_1][nadador][0] for nadador in comb_RIAS_p1]
+            tiempos_RIAS_p2 = [diccionario['RIAS'][prueba_2][nadador][0] for nadador in comb_RIAS_p2]
+            puntos_MOLEMOS_p1 = 0
+            puntos_MOLEMOS_p2 = 0
+            puntos_BOIRO_p1 = 0
+            puntos_BOIRO_p2 = 0
+            puntos_RIAS_p1 = 0
+            puntos_RIAS_p2 = 0
 
-                        tiempos_prueba1 = [(tiempo, 'MOLEMOS') for tiempo in tiempos_MOLEMOS_p1] + [(tiempo, 'BOIRO') for tiempo in tiempos_BOIRO_p1] + [(tiempo, 'RIAS') for tiempo in tiempos_RIAS_p1]
-                        tiempos_prueba2 = [(tiempo, 'MOLEMOS') for tiempo in tiempos_MOLEMOS_p2] + [(tiempo, 'BOIRO') for tiempo in tiempos_BOIRO_p2] + [(tiempo, 'RIAS') for tiempo in tiempos_RIAS_p2]
-                        
-                        tiempos_prueba1_ordenados = sorted(tiempos_prueba1, key=lambda x: x[0])
-                        tiempos_prueba2_ordenados = sorted(tiempos_prueba2, key=lambda x: x[0])
-                        
-                        for i, nadador in enumerate(tiempos_prueba1_ordenados):
-                            if nadador[1] == 'MOLEMOS':
-                                puntos_MOLEMOS_p1 += 6 - i
-                            elif nadador[1] == 'BOIRO':
-                                puntos_BOIRO_p1 += 6 - i
-                            else:
-                                puntos_RIAS_p1 += 6 - i
-                                
-                        for i, nadador in enumerate(tiempos_prueba2_ordenados):
-                            if nadador[1] == 'MOLEMOS':
-                                puntos_MOLEMOS_p2 += 6 - i
-                            elif nadador[1] == 'BOIRO':
-                                puntos_BOIRO_p2 += 6 - i
-                            else:
-                                puntos_RIAS_p2 += 6 - i
+            tiempos_prueba1 = [(tiempo, 'MOLEMOS') for tiempo in tiempos_MOLEMOS_p1] + [(tiempo, 'BOIRO') for tiempo in tiempos_BOIRO_p1] + [(tiempo, 'RIAS') for tiempo in tiempos_RIAS_p1]
+            tiempos_prueba2 = [(tiempo, 'MOLEMOS') for tiempo in tiempos_MOLEMOS_p2] + [(tiempo, 'BOIRO') for tiempo in tiempos_BOIRO_p2] + [(tiempo, 'RIAS') for tiempo in tiempos_RIAS_p2]
+            
+            tiempos_prueba1_ordenados = sorted(tiempos_prueba1, key=lambda x: x[0])
+            tiempos_prueba2_ordenados = sorted(tiempos_prueba2, key=lambda x: x[0])
+            
+            for i, nadador in enumerate(tiempos_prueba1_ordenados):
+                if nadador[1] == 'MOLEMOS':
+                    puntos_MOLEMOS_p1 += 6 - i
+                elif nadador[1] == 'BOIRO':
+                    puntos_BOIRO_p1 += 6 - i
+                else:
+                    puntos_RIAS_p1 += 6 - i
+                    
+            for i, nadador in enumerate(tiempos_prueba2_ordenados):
+                if nadador[1] == 'MOLEMOS':
+                    puntos_MOLEMOS_p2 += 6 - i
+                elif nadador[1] == 'BOIRO':
+                    puntos_BOIRO_p2 += 6 - i
+                else:
+                    puntos_RIAS_p2 += 6 - i
 
-                        puntuacion_MOLEMOS = puntos_MOLEMOS_p1 + puntos_MOLEMOS_p2
-                        puntuacion_BOIRO = puntos_BOIRO_p1 + puntos_BOIRO_p2
-                        puntuacion_RIAS = puntos_RIAS_p1 + puntos_RIAS_p2
-                        puntuaciones_MOLEMOS.append(puntuacion_MOLEMOS)
+            puntuacion_MOLEMOS = puntos_MOLEMOS_p1 + puntos_MOLEMOS_p2
+            puntuacion_BOIRO = puntos_BOIRO_p1 + puntos_BOIRO_p2
+            puntuacion_RIAS = puntos_RIAS_p1 + puntos_RIAS_p2
+            puntuaciones_MOLEMOS.append(puntuacion_MOLEMOS)
 
         puntuaciones[(comb_MOLEMOS_p1, comb_MOLEMOS_p2)] = sum(puntuaciones_MOLEMOS)/len(puntuaciones_MOLEMOS)
 
