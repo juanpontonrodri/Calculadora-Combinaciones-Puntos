@@ -21,9 +21,7 @@ ordenadas de menor a mayor puntuacion.
 
 Medidas de optimización:
 -Usar listas de comprension
--Usar funciones lambda
 -Modifciar las estructurasd de datos para que sean mas eficientes(usar sets en vez de listas)
--Usar numpy 
 -Optimizar las sumas
 
 
