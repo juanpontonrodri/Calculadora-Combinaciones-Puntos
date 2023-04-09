@@ -14,18 +14,35 @@ def calc_puntuacion(tiempos_MOLEMOS, tiempos_BOIRO, tiempos_RIAS):
     puntos_BOIRO_p2 = 0
     puntos_RIAS_p1 = 0
     puntos_RIAS_p2 = 0
+    
     tiempos_prueba1 = [(tiempo, 'MOLEMOS') for tiempo in tiempos_MOLEMOS[0]] + [(tiempo, 'BOIRO') for tiempo in tiempos_BOIRO[0]] + [(tiempo, 'RIAS') for tiempo in tiempos_RIAS[0]]
     tiempos_prueba2 = [(tiempo, 'MOLEMOS') for tiempo in tiempos_MOLEMOS[1]] + [(tiempo, 'BOIRO') for tiempo in tiempos_BOIRO[1]] + [(tiempo, 'RIAS') for tiempo in tiempos_RIAS[1]]
     
-    tiempos_prueba1_ordenados = sorted(tiempos_prueba1, key=lambda x: x[0])
-    tiempos_prueba2_ordenados = sorted(tiempos_prueba2, key=lambda x: x[0])
     
+    
+    tiempos=[]
+    tiempos.append(sorted(tiempos_prueba1, key=lambda x: x[0]))
+    tiempos.append(sorted(tiempos_prueba2, key=lambda x: x[0]))
     
     puntos_MOLEMOS = [0] * 2
     puntos_BOIRO =[0] * 2
     puntos_RIAS = [0] * 2
+    contador=0
     
-    for i, nadador in enumerate(tiempos_prueba1_ordenados):
+    for t in tiempos:
+        for i, nadador in enumerate(t):
+            if nadador[1] == 'MOLEMOS':
+                puntos_MOLEMOS[contador] += 6 - i
+            elif nadador[1] == 'BOIRO':
+                puntos_BOIRO[contador] += 6 - i
+            else:
+                puntos_RIAS[contador] += 6 - i
+        contador=contador+1
+            
+    #con dos pruebas no aprecio cambios notables de rendimiento
+    #tiempos_prueba1_ordenados = sorted(tiempos_prueba1, key=lambda x: x[0])
+    #tiempos_prueba2_ordenados = sorted(tiempos_prueba2, key=lambda x: x[0])
+    """ for i, nadador in enumerate(tiempos_prueba1_ordenados):
         if nadador[1] == 'MOLEMOS':
             puntos_MOLEMOS[0] += 6 - i
         elif nadador[1] == 'BOIRO':
@@ -39,7 +56,7 @@ def calc_puntuacion(tiempos_MOLEMOS, tiempos_BOIRO, tiempos_RIAS):
         elif nadador[1] == 'BOIRO':
             puntos_BOIRO[1] += 6 - i
         else:
-            puntos_RIAS[1] += 6 - i
+            puntos_RIAS[1] += 6 - i """
 
     puntuacion_MOLEMOS = puntos_MOLEMOS[0] + puntos_MOLEMOS[1];
     puntuacion_BOIRO = puntos_BOIRO[0] + puntos_BOIRO[1];
@@ -138,8 +155,13 @@ prueba_1=nombres_pruebas[0]
 prueba_2=nombres_pruebas[1]
                        
 c=0
-numero_combinaciones_MOLEMOS = len(combinaciones_equipo_prueba[('MOLEMOS', prueba_1)]) * len(combinaciones_equipo_prueba[('MOLEMOS', prueba_2)])          
-numero_combinaciones_totales = numero_combinaciones_MOLEMOS * len(combinaciones_equipo_prueba[('BOIRO', prueba_1)]) * len(combinaciones_equipo_prueba[('BOIRO', prueba_2)]) * len(combinaciones_equipo_prueba[('RIAS', prueba_1)]) * len(combinaciones_equipo_prueba[('RIAS', prueba_2)])
+numero_combinaciones_MOLEMOS = 1
+numero_combinaciones_totales=1
+
+for prueba in nombres_pruebas:
+    numero_combinaciones_MOLEMOS=numero_combinaciones_MOLEMOS*len(combinaciones_equipo_prueba[('MOLEMOS', prueba)])
+    numero_combinaciones_totales=numero_combinaciones_MOLEMOS*len(combinaciones_equipo_prueba[('BOIRO', prueba)])*len(combinaciones_equipo_prueba[('RIAS', prueba)])
+
 puntuaciones = {}
 for comb_MOLEMOS_p1 in combinaciones_equipo_prueba[('MOLEMOS', prueba_1)]:
     for comb_MOLEMOS_p2 in combinaciones_equipo_prueba[('MOLEMOS', prueba_2)]:
@@ -158,15 +180,30 @@ for comb_MOLEMOS_p1 in combinaciones_equipo_prueba[('MOLEMOS', prueba_1)]:
             
             
             #probar usando tiemposmolemos.append en vez d eponer lo sindices
-            tiempos_MOLEMOS[0] = [diccionario['MOLEMOS'][prueba_1][nadador][0] for nadador in comb_MOLEMOS_p1]
-            tiempos_MOLEMOS[1] = [diccionario['MOLEMOS'][prueba_2][nadador][0] for nadador in comb_MOLEMOS_p2]
-            tiempos_BOIRO[0] = [diccionario['BOIRO'][prueba_1][nadador][0] for nadador in comb_BOIRO_p1]
-            tiempos_BOIRO[1] = [diccionario['BOIRO'][prueba_2][nadador][0] for nadador in comb_BOIRO_p2]
-            tiempos_RIAS[0] = [diccionario['RIAS'][prueba_1][nadador][0] for nadador in comb_RIAS_p1]
-            tiempos_RIAS[1] = [diccionario['RIAS'][prueba_2][nadador][0] for nadador in comb_RIAS_p2]
+            tiempos_MOLEMOS.append([diccionario['MOLEMOS'][prueba_1][nadador][0] for nadador in comb_MOLEMOS_p1])
+            tiempos_MOLEMOS.append([diccionario['MOLEMOS'][prueba_2][nadador][0] for nadador in comb_MOLEMOS_p2])
+            tiempos_BOIRO.append([diccionario['BOIRO'][prueba_1][nadador][0] for nadador in comb_BOIRO_p1])
+            tiempos_BOIRO.append([diccionario['BOIRO'][prueba_2][nadador][0] for nadador in comb_BOIRO_p2])
+            tiempos_RIAS.append([diccionario['RIAS'][prueba_1][nadador][0] for nadador in comb_RIAS_p1])
+            tiempos_RIAS.append([diccionario['RIAS'][prueba_2][nadador][0] for nadador in comb_RIAS_p2])
             
+            #Para dos pruebas sube el tiempo de ejecucion en un 15%
+            """ contador = 1
+            for prueba in nombres_pruebas:
+                comb_MOLEMOS = globals()[f"comb_MOLEMOS_p{contador}"]
+                tiempos_MOLEMOS.append([diccionario['MOLEMOS'][prueba][nadador][0] for nadador in comb_MOLEMOS])
+                
+                # Repite el mismo proceso para las otras variables de combinación
+                comb_BOIRO = globals()[f"comb_BOIRO_p{contador}"]
+                tiempos_BOIRO.append([diccionario['BOIRO'][prueba][nadador][0] for nadador in comb_BOIRO])
+                
+                comb_RIAS = globals()[f"comb_RIAS_p{contador}"]
+                tiempos_RIAS.append([diccionario['RIAS'][prueba][nadador][0] for nadador in comb_RIAS])
+                
+                contador += 1 """
+
             
-            puntuacion_MOLEMOS = calc_puntuacion(tiempos_MOLEMOS, tiempos_BOIRO, tiempos_RIAS)
+            puntuacion_MOLEMOS, puntuacion_BOIRO, puntuacion_RIAS= calc_puntuacion(tiempos_MOLEMOS, tiempos_BOIRO, tiempos_RIAS)
             puntuaciones_MOLEMOS.append(puntuacion_MOLEMOS)
 
         puntuaciones[(comb_MOLEMOS_p1, comb_MOLEMOS_p2)] = sum(puntuaciones_MOLEMOS)/len(puntuaciones_MOLEMOS)

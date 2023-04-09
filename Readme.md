@@ -23,6 +23,9 @@ Medidas de optimización:
 -Usar listas de comprension
 -Modifciar las estructurasd de datos para que sean mas eficientes(usar sets en vez de listas)
 -Optimizar las sumas
+-Guardado y seleccion de mejores combinaciones
+-Arreglar puntuaciones para 7 puntos el primero
+-Separar diccionario en 3 diccionarios(uno por club) y luego crear listas para cada preuba en esos diccionarios
 
 
 
