@@ -40,6 +40,33 @@ def calc_puntuacion(diccionario):
     return puntuacion_MOLEMOS, puntuacion_BOIRO, puntuacion_RIAS
 
 
+""" def crear_diccionario(archivo):
+        
+    # Leer el archivo CSV
+    df = pd.read_csv(archivo)
+
+    # Crear un diccionario para almacenar los tiempos de cada nadador
+    diccionario = {}
+
+    # Recorrer el DataFrame y agregar los tiempos a cada nadador en el diccionario
+    for index, row in df.iterrows():
+        equipo = row["Equipo"]
+        tiempo = row["Tiempo"]
+        nombre = row["Nombre"]
+        prueba = row["Prueba"]
+        if equipo not in diccionario:
+            diccionario[equipo] = {}
+        if prueba not in diccionario[equipo]:
+            diccionario[equipo][prueba] = {}
+        if nombre not in diccionario[equipo][prueba]:
+            diccionario[equipo][prueba][nombre] = []
+        diccionario[equipo][prueba][nombre].append(tiempo)
+
+    # Obtener la lista de nombres de prueba
+    nombre_prueba = sorted(list(set(df["Prueba"]))) 
+
+    return diccionario, nombre_prueba"""
+
 def crear_diccionario(folder_path):
         
     # Obtener los nombres de los archivos en la carpeta
