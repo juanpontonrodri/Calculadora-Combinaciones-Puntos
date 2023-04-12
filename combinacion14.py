@@ -6,7 +6,7 @@ from itertools import combinations,product
 import time
 import heapq
 
-puntuacion_minima_total=10;
+puntuacion_minima_total=14;
 puntuacion_minima_media=15;
 
 def calc_puntuacion(tiempos_MOLEMOS, tiempos_BOIRO, tiempos_RIAS):

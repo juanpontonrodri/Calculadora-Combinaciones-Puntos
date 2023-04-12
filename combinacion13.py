@@ -4,6 +4,7 @@ import pandas as pd
 import os
 from itertools import combinations,product
 import time
+import heapq
 
 puntuacion_minima=15;
 
@@ -187,14 +188,19 @@ for prueba in nombres_pruebas:
     numero_combinaciones_totales=numero_combinaciones_MOLEMOS*len(combinaciones_equipo_prueba[('BOIRO', prueba)])*len(combinaciones_equipo_prueba[('RIAS', prueba)])
 
 puntuaciones = {}
+
+temp_puntuacion=0
+
 for comb_MOLEMOS_p1 in combinaciones_equipo_prueba[('MOLEMOS', prueba_1)]:
-    for comb_MOLEMOS_p2 in combinaciones_equipo_prueba[('MOLEMOS', prueba_2)]:        
-        c+=1
-        print("Combinación número %d de %d %s %s" % (c, numero_combinaciones_MOLEMOS, comb_MOLEMOS_p1, comb_MOLEMOS_p2))
+    for comb_MOLEMOS_p2 in combinaciones_equipo_prueba[('MOLEMOS', prueba_2)]:
+        c+=1        
         puntuaciones_MOLEMOS = []
         if set(comb_MOLEMOS_p1) & set(comb_MOLEMOS_p2):
             numero_combinaciones_MOLEMOS_duplicadas=numero_combinaciones_MOLEMOS_duplicadas+1
             continue
+        
+        print("||Previa: ",temp_puntuacion)#imprime puntuacion previa
+        print("Combinación número %d de %d %s %s" % (c, numero_combinaciones_MOLEMOS, comb_MOLEMOS_p1, comb_MOLEMOS_p2))
         for comb_BOIRO_p1, comb_BOIRO_p2, comb_RIAS_p1, comb_RIAS_p2 in product(combinaciones_equipo_prueba[('BOIRO', prueba_1)], combinaciones_equipo_prueba[('BOIRO', prueba_2)], combinaciones_equipo_prueba[('RIAS', prueba_1)], combinaciones_equipo_prueba[('RIAS', prueba_2)]):
             if set(comb_BOIRO_p1) & set(comb_BOIRO_p2) or set(comb_RIAS_p1) & set(comb_RIAS_p2):
                 continue
@@ -256,12 +262,27 @@ for comb_MOLEMOS_p1 in combinaciones_equipo_prueba[('MOLEMOS', prueba_1)]:
         if(len(puntuaciones_MOLEMOS)!=0):
             puntuaciones[(comb_MOLEMOS_p1, comb_MOLEMOS_p2)] = sum(puntuaciones_MOLEMOS)/len(puntuaciones_MOLEMOS)
             print(puntuaciones[(comb_MOLEMOS_p1, comb_MOLEMOS_p2)]," ",tiempos_MOLEMOS)
+            temp_puntuacion=puntuaciones[(comb_MOLEMOS_p1, comb_MOLEMOS_p2)]
         
-        
-# Obtener las combinaciones con la puntuación más alta
-mejores_combinaciones = [k for k, v in puntuaciones.items() if v == max(puntuaciones.values())]
 
-print(mejores_combinaciones)
+# Obtener las mejores 10 combinaciones con la puntuación más alta
+mejores_combinaciones = heapq.nlargest(10, puntuaciones, key=puntuaciones.get)
+
+print("\nLas mejores 10 combinaciones son:")
+for i, combinacion in enumerate(mejores_combinaciones):
+    print(f"{i+1}. {combinacion} - Puntuación: {puntuaciones[combinacion]}")
+
+# Obtener el número de combinaciones que superan la puntuación mínima
+contador_combinaciones = 0
+for puntuacion in puntuaciones.values():
+    if puntuacion >= puntuacion_minima:
+        contador_combinaciones += 1
+
+print(f"Hay {contador_combinaciones} combinaciones que superan la puntuación mínima de {puntuacion_minima}")
+
+
+mejores_combinaciones_2 = [k for k, v in puntuaciones.items() if v == max(puntuaciones.values())]
+print(mejores_combinaciones_2)
 
 
 
