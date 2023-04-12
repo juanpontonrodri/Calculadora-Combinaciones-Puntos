@@ -1,5 +1,4 @@
-#optimizado usdano product en la parte de los otros dos clubs
-
+#intento de separo de diccionarios, no vale la pena
 import pandas as pd
 import os
 from itertools import combinations,product

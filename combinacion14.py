@@ -4,8 +4,10 @@ import pandas as pd
 import os
 from itertools import combinations,product
 import time
+import heapq
 
-puntuacion_minima=15;
+puntuacion_minima_total=10;
+puntuacion_minima_media=15;
 
 def calc_puntuacion(tiempos_MOLEMOS, tiempos_BOIRO, tiempos_RIAS):
     
@@ -84,40 +86,30 @@ def calc_puntuacion(tiempos_MOLEMOS, tiempos_BOIRO, tiempos_RIAS):
     return puntuacion_MOLEMOS, puntuacion_BOIRO, puntuacion_RIAS
 
 
-def crear_diccionario(folder_path):
+def crear_diccionario(archivo):
         
-    # Obtener los nombres de los archivos en la carpeta
-    file_names = os.listdir(folder_path)
+    # Leer el archivo CSV
+    df = pd.read_csv(archivo)
 
-    # Crear un diccionario para almacenar las pruebas y sus archivos
-    pruebas_archivos = {}
+    # Crear un diccionario para almacenar los tiempos de cada nadador
+    diccionario = {}
 
-    # Agregar cada archivo al diccionario con el nombre de la prueba como clave
-    for name in file_names:
-        # Obtener el nombre de la prueba a partir del nombre del archivo
-        prueba_name = name.split('_tiempos')[0]
-        # Agregar la prueba y su archivo al diccionario
-        pruebas_archivos[prueba_name] = folder_path + name
+    # Recorrer el DataFrame y agregar los tiempos a cada nadador en el diccionario
+    for index, row in df.iterrows():
+        equipo = row["Equipo"]
+        tiempo = row["Tiempo"]
+        nombre = row["Nombre"]
+        prueba = row["Prueba"]
+        if equipo not in diccionario:
+            diccionario[equipo] = {}
+        if prueba not in diccionario[equipo]:
+            diccionario[equipo][prueba] = {}
+        if nombre not in diccionario[equipo][prueba]:
+            diccionario[equipo][prueba][nombre] = []
+        diccionario[equipo][prueba][nombre].append(tiempo)
 
     # Obtener la lista de nombres de prueba
-    nombre_prueba = list(pruebas_archivos.keys())
-    # Leer los archivos CSV y guardar los tiempos de cada nadador
-    diccionario = {}
-    for prueba, archivo in pruebas_archivos.items():
-        df = pd.read_csv(archivo)
-        for index, row in df.iterrows():
-            equipo = row["Equipo"]
-            tiempo = row["Tiempo"]
-            nombre = row["Nombre"]
-            if row["Prueba"] != prueba:
-                continue
-            if equipo not in diccionario:
-                diccionario[equipo] = {}
-            if prueba not in diccionario[equipo]:
-                diccionario[equipo][prueba] = {}
-            if nombre not in diccionario[equipo][prueba]:
-                diccionario[equipo][prueba][nombre] = []
-            diccionario[equipo][prueba][nombre].append(tiempo)
+    nombre_prueba = sorted(list(set(df["Prueba"]))) 
 
     return diccionario, nombre_prueba
 
@@ -141,9 +133,9 @@ start_time = time.time()
 
 
 
-folder_path = './series/'
+archivo = 'series_test.csv'
 
-diccionario,nombres_pruebas = crear_diccionario(folder_path)
+diccionario,nombres_pruebas = crear_diccionario(archivo)
 
 print("###Diccionario creado###")
 
@@ -230,7 +222,7 @@ for comb_MOLEMOS_p1 in combinaciones_equipo_prueba[('MOLEMOS', prueba_1)]:
             
             puntuacion_MOLEMOS, puntuacion_BOIRO, puntuacion_RIAS= calc_puntuacion(tiempos_MOLEMOS, tiempos_BOIRO, tiempos_RIAS)
             #print("puntuacion MOLEMOS %d BOIRO %d RIAS %d" %(puntuacion_MOLEMOS,puntuacion_BOIRO, puntuacion_RIAS))
-            if(puntuacion_MOLEMOS<puntuacion_minima):
+            if(puntuacion_MOLEMOS<puntuacion_minima_total):
                 
                 flag2=flag2+1
                 print("#No llega al minimo, flag2:",flag2)
@@ -257,11 +249,23 @@ for comb_MOLEMOS_p1 in combinaciones_equipo_prueba[('MOLEMOS', prueba_1)]:
             puntuaciones[(comb_MOLEMOS_p1, comb_MOLEMOS_p2)] = sum(puntuaciones_MOLEMOS)/len(puntuaciones_MOLEMOS)
             print(puntuaciones[(comb_MOLEMOS_p1, comb_MOLEMOS_p2)]," ",tiempos_MOLEMOS)
         
-        
-# Obtener las combinaciones con la puntuación más alta
-mejores_combinaciones = [k for k, v in puntuaciones.items() if v == max(puntuaciones.values())]
+ 
 
-print(mejores_combinaciones)
+# Obtener las mejores 10 combinaciones con la puntuación más alta
+mejores_combinaciones = heapq.nlargest(10, puntuaciones, key=puntuaciones.get)
+
+print("\nLas mejores 10 combinaciones son:")
+for i, combinacion in enumerate(mejores_combinaciones):
+    print(f"{i+1}. {combinacion} - Puntuación: {puntuaciones[combinacion]}")
+
+# Obtener el número de combinaciones que superan la puntuación mínima
+contador_combinaciones = 0
+for puntuacion in puntuaciones.values():
+    if puntuacion >= puntuacion_minima_media:
+        contador_combinaciones += 1
+
+print(f"Hay {contador_combinaciones} combinaciones que superan la puntuación mínima de {puntuacion_minima}")
+
 
 
 
