@@ -5,8 +5,9 @@ import os
 from itertools import combinations,product
 import time
 
+puntuacion_minima=15;
 
-def calc_puntuacion(diccionario):
+def calc_puntuacion(tiempos_MOLEMOS, tiempos_BOIRO, tiempos_RIAS):
     
     puntos_MOLEMOS_p1 = 0
     puntos_MOLEMOS_p2 = 0
@@ -15,60 +16,73 @@ def calc_puntuacion(diccionario):
     puntos_RIAS_p1 = 0
     puntos_RIAS_p2 = 0
     
-#MAL A PARTIR DE AQUI
+    tiempos_prueba1 = [(tiempo, 'MOLEMOS') for tiempo in tiempos_MOLEMOS[0]] + [(tiempo, 'BOIRO') for tiempo in tiempos_BOIRO[0]] + [(tiempo, 'RIAS') for tiempo in tiempos_RIAS[0]]
+    tiempos_prueba2 = [(tiempo, 'MOLEMOS') for tiempo in tiempos_MOLEMOS[1]] + [(tiempo, 'BOIRO') for tiempo in tiempos_BOIRO[1]] + [(tiempo, 'RIAS') for tiempo in tiempos_RIAS[1]]
     
-    for nadadores in diccionario.values():
-        for tiempos in nadadores.values():
-            tiempos_prueba = [(tiempo, equipo) for equipo, tiempo in tiempos.items()]
-            print(tiempos_prueba)
-            tiempos_prueba_ordenados = sorted(tiempos_prueba, key=lambda x: x[0])
+    
+    
+    
+    tiempos=[]
+    tiempos.append(sorted(tiempos_prueba1, key=lambda x: x[0]))
+    tiempos.append(sorted(tiempos_prueba2, key=lambda x: x[0]))
+    
+    #print(tiempos)
+    
+    puntos_MOLEMOS = [0] * 2
+    puntos_BOIRO =[0] * 2
+    puntos_RIAS = [0] * 2
+    contador=0
+    
+    for t in tiempos:
+        for i, nadador in enumerate(t):
+            #print(contador)
+            if i!=0:
+                if nadador[1] == 'MOLEMOS':
+                    puntos_MOLEMOS[contador] += 6 - i
+                    #print("puntos molemos ",puntos_MOLEMOS)
+                elif nadador[1] == 'BOIRO':
+                    puntos_BOIRO[contador] += 6 - i
+                    #print("puntos boiro ",puntos_BOIRO)
+                else:
+                    puntos_RIAS[contador] += 6 - i
+                    #print("puntos rias ",puntos_RIAS)
+            else:
+                if nadador[1] == 'MOLEMOS':
+                    puntos_MOLEMOS[contador] += 7
+                    #print("puntos molemos ",puntos_MOLEMOS)
+                elif nadador[1] == 'BOIRO':
+                    puntos_BOIRO[contador] += 7
+                    #print("puntos boiro ",puntos_BOIRO)
+                else:
+                    puntos_RIAS[contador] += 7
+                    #print("puntos rias ",puntos_RIAS)
+        contador=contador+1
             
-            if tiempos is diccionario['MOLEMOS'][prueba_1]:
-                puntos_MOLEMOS_p1 = sum([6-i for i in range(len(tiempos_prueba_ordenados)) if tiempos_prueba_ordenados[i][1] == 'MOLEMOS'])
-            elif tiempos is diccionario['MOLEMOS'][prueba_2]:
-                puntos_MOLEMOS_p2 = sum([6-i for i in range(len(tiempos_prueba_ordenados)) if tiempos_prueba_ordenados[i][1] == 'MOLEMOS'])
-            elif tiempos is diccionario['BOIRO'][prueba_1]:
-                puntos_BOIRO_p1 = sum([6-i for i in range(len(tiempos_prueba_ordenados)) if tiempos_prueba_ordenados[i][1] == 'BOIRO'])
-            elif tiempos is diccionario['BOIRO'][prueba_2]:
-                puntos_BOIRO_p2 = sum([6-i for i in range(len(tiempos_prueba_ordenados)) if tiempos_prueba_ordenados[i][1] == 'BOIRO'])
-            elif tiempos is diccionario['RIAS'][prueba_1]:
-                puntos_RIAS_p1 = sum([6-i for i in range(len(tiempos_prueba_ordenados)) if tiempos_prueba_ordenados[i][1] == 'RIAS'])
-            elif tiempos is diccionario['RIAS'][prueba_2]:
-                puntos_RIAS_p2 = sum([6-i for i in range(len(tiempos_prueba_ordenados)) if tiempos_prueba_ordenados[i][1] == 'RIAS'])
+    #con dos pruebas no aprecio cambios notables de rendimiento
+    #tiempos_prueba1_ordenados = sorted(tiempos_prueba1, key=lambda x: x[0])
+    #tiempos_prueba2_ordenados = sorted(tiempos_prueba2, key=lambda x: x[0])
+    """ for i, nadador in enumerate(tiempos_prueba1_ordenados):
+        if nadador[1] == 'MOLEMOS':
+            puntos_MOLEMOS[0] += 6 - i
+        elif nadador[1] == 'BOIRO':
+            puntos_BOIRO[0] += 6 - i
+        else:
+            puntos_RIAS[0] += 6 - i
+            
+    for i, nadador in enumerate(tiempos_prueba2_ordenados):
+        if nadador[1] == 'MOLEMOS':
+            puntos_MOLEMOS[1] += 6 - i
+        elif nadador[1] == 'BOIRO':
+            puntos_BOIRO[1] += 6 - i
+        else:
+            puntos_RIAS[1] += 6 - i """
 
-    puntuacion_MOLEMOS = puntos_MOLEMOS_p1 + puntos_MOLEMOS_p2;
-    puntuacion_BOIRO = puntos_BOIRO_p1 + puntos_BOIRO_p2;
-    puntuacion_RIAS = puntos_RIAS_p1 + puntos_RIAS_p2;
+    puntuacion_MOLEMOS = puntos_MOLEMOS[0] + puntos_MOLEMOS[1];
+    puntuacion_BOIRO = puntos_BOIRO[0] + puntos_BOIRO[1];
+    puntuacion_RIAS = puntos_RIAS[0] + puntos_RIAS[1];
     
     return puntuacion_MOLEMOS, puntuacion_BOIRO, puntuacion_RIAS
 
-
-""" def crear_diccionario(archivo):
-        
-    # Leer el archivo CSV
-    df = pd.read_csv(archivo)
-
-    # Crear un diccionario para almacenar los tiempos de cada nadador
-    diccionario = {}
-
-    # Recorrer el DataFrame y agregar los tiempos a cada nadador en el diccionario
-    for index, row in df.iterrows():
-        equipo = row["Equipo"]
-        tiempo = row["Tiempo"]
-        nombre = row["Nombre"]
-        prueba = row["Prueba"]
-        if equipo not in diccionario:
-            diccionario[equipo] = {}
-        if prueba not in diccionario[equipo]:
-            diccionario[equipo][prueba] = {}
-        if nombre not in diccionario[equipo][prueba]:
-            diccionario[equipo][prueba][nombre] = []
-        diccionario[equipo][prueba][nombre].append(tiempo)
-
-    # Obtener la lista de nombres de prueba
-    nombre_prueba = sorted(list(set(df["Prueba"]))) 
-
-    return diccionario, nombre_prueba"""
 
 def crear_diccionario(folder_path):
         
@@ -123,22 +137,6 @@ def crear_combinaciones(diccionario):
             combinaciones_equipo_prueba[(equipo, prueba)] = combinaciones_prueba
     return combinaciones_equipo_prueba
 
-def crear_diccionarios_por_club(diccionario):
-    diccionarios_por_club = {}
-    for club, pruebas in diccionario.items():
-        if club not in diccionarios_por_club:
-            diccionarios_por_club[club] = {}
-        for prueba, nadadores in pruebas.items():
-            if prueba not in diccionarios_por_club[club]:
-                diccionarios_por_club[club][prueba] = {'nadadores': [], 'tiempos': []}
-
-            for nadador, tiempos in nadadores.items():
-                diccionarios_por_club[club][prueba]['nadadores'].append(nadador)
-                diccionarios_por_club[club][prueba]['tiempos'].append(tiempos)
-    return diccionarios_por_club
-
-
-
 start_time = time.time()
 
 
@@ -149,16 +147,9 @@ diccionario,nombres_pruebas = crear_diccionario(folder_path)
 
 print("###Diccionario creado###")
 
-diccionario_nuevo=crear_diccionarios_por_club(diccionario)
-
-print("###Diccionario nuevo creado###")
-
-
 combinaciones_equipo_prueba = crear_combinaciones(diccionario)
 
 print("###Combinaciones creadas###")
-
-
 #cada nadador solo puede estar o en la combinacion de la preuab 1 o en la combinacino de la preuab 2
 
 #combinacion MOLEMOS para prueba 1
@@ -181,10 +172,15 @@ print("###Combinaciones creadas###")
                          
 prueba_1=nombres_pruebas[0]
 prueba_2=nombres_pruebas[1]
+
+flag1=0
+flag2=0
                        
 c=0
 numero_combinaciones_MOLEMOS = 1
+numero_combinaciones_MOLEMOS_duplicadas=0
 numero_combinaciones_totales=1
+
 
 for prueba in nombres_pruebas:
     numero_combinaciones_MOLEMOS=numero_combinaciones_MOLEMOS*len(combinaciones_equipo_prueba[('MOLEMOS', prueba)])
@@ -192,11 +188,12 @@ for prueba in nombres_pruebas:
 
 puntuaciones = {}
 for comb_MOLEMOS_p1 in combinaciones_equipo_prueba[('MOLEMOS', prueba_1)]:
-    for comb_MOLEMOS_p2 in combinaciones_equipo_prueba[('MOLEMOS', prueba_2)]:
+    for comb_MOLEMOS_p2 in combinaciones_equipo_prueba[('MOLEMOS', prueba_2)]:        
         c+=1
         print("Combinación número %d de %d %s %s" % (c, numero_combinaciones_MOLEMOS, comb_MOLEMOS_p1, comb_MOLEMOS_p2))
         puntuaciones_MOLEMOS = []
         if set(comb_MOLEMOS_p1) & set(comb_MOLEMOS_p2):
+            numero_combinaciones_MOLEMOS_duplicadas=numero_combinaciones_MOLEMOS_duplicadas+1
             continue
         for comb_BOIRO_p1, comb_BOIRO_p2, comb_RIAS_p1, comb_RIAS_p2 in product(combinaciones_equipo_prueba[('BOIRO', prueba_1)], combinaciones_equipo_prueba[('BOIRO', prueba_2)], combinaciones_equipo_prueba[('RIAS', prueba_1)], combinaciones_equipo_prueba[('RIAS', prueba_2)]):
             if set(comb_BOIRO_p1) & set(comb_BOIRO_p2) or set(comb_RIAS_p1) & set(comb_RIAS_p2):
@@ -231,11 +228,35 @@ for comb_MOLEMOS_p1 in combinaciones_equipo_prueba[('MOLEMOS', prueba_1)]:
                 contador += 1 """
 
             
-            puntuacion_MOLEMOS, puntuacion_BOIRO, puntuacion_RIAS= calc_puntuacion(diccionario_nuevo)
+            puntuacion_MOLEMOS, puntuacion_BOIRO, puntuacion_RIAS= calc_puntuacion(tiempos_MOLEMOS, tiempos_BOIRO, tiempos_RIAS)
+            #print("puntuacion MOLEMOS %d BOIRO %d RIAS %d" %(puntuacion_MOLEMOS,puntuacion_BOIRO, puntuacion_RIAS))
+            if(puntuacion_MOLEMOS<puntuacion_minima):
+                
+                flag2=flag2+1
+                print("#No llega al minimo, flag2:",flag2)
+                if(flag2>1):
+                    flag1=flag1+1
+                    print("flag1: ",flag1)
+                else:
+                    flag1=0	
+                print("break interno")
+                break
+            else:
+                flag2=0
+                
             puntuaciones_MOLEMOS.append(puntuacion_MOLEMOS)
 
-        puntuaciones[(comb_MOLEMOS_p1, comb_MOLEMOS_p2)] = sum(puntuaciones_MOLEMOS)/len(puntuaciones_MOLEMOS)
+            #input("Presiona una tecla para continuar...")
 
+            
+        if(flag1>1):
+            print("break en p2")
+            break
+        if(len(puntuaciones_MOLEMOS)!=0):
+            puntuaciones[(comb_MOLEMOS_p1, comb_MOLEMOS_p2)] = sum(puntuaciones_MOLEMOS)/len(puntuaciones_MOLEMOS)
+            print(puntuaciones[(comb_MOLEMOS_p1, comb_MOLEMOS_p2)])
+        
+        
 # Obtener las combinaciones con la puntuación más alta
 mejores_combinaciones = [k for k, v in puntuaciones.items() if v == max(puntuaciones.values())]
 
@@ -247,4 +268,5 @@ end_time=time.time()
 
 print()
 print("Numero de combinaciones totales: ",numero_combinaciones_totales)
+print("Numero de combinaciones MOLEMOS duplicadas: ",numero_combinaciones_MOLEMOS_duplicadas,"Total combinaciones MOLEMOS evaluadas: ",numero_combinaciones_MOLEMOS-numero_combinaciones_MOLEMOS_duplicadas)
 print("Tiempo de ejecución: ",end_time-start_time)
