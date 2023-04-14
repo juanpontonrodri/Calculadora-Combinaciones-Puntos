@@ -165,9 +165,13 @@ print("###Combinaciones creadas###")
 prueba_1=nombres_pruebas[0]
 prueba_2=nombres_pruebas[1]
 
+flag_save=1
 flag1=0
 flag2=0
-                       
+         
+#variuable para debug
+num_comb_guardad=[]
+         
 c=0
 numero_combinaciones_MOLEMOS = 1
 numero_combinaciones_MOLEMOS_duplicadas=0
@@ -180,6 +184,7 @@ for prueba in nombres_pruebas:
 
 puntuaciones = {}
 for comb_MOLEMOS_p1 in combinaciones_equipo_prueba[('MOLEMOS', prueba_1)]:
+    flag1=0
     for comb_MOLEMOS_p2 in combinaciones_equipo_prueba[('MOLEMOS', prueba_2)]:        
         c+=1
         print("Combinación número %d de %d %s %s" % (c, numero_combinaciones_MOLEMOS, comb_MOLEMOS_p1, comb_MOLEMOS_p2))
@@ -226,17 +231,21 @@ for comb_MOLEMOS_p1 in combinaciones_equipo_prueba[('MOLEMOS', prueba_1)]:
                 
                 flag2=flag2+1
                 print("#No llega al minimo, flag2:",flag2)
+                #print(comb_BOIRO_p1,comb_BOIRO_p2,comb_RIAS_p1,comb_RIAS_p2)
+                #print(tiempos_MOLEMOS,tiempos_BOIRO,tiempos_RIAS)
+                #print(puntuacion_MOLEMOS,puntuacion_BOIRO,puntuacion_RIAS)
                 if(flag2>1):
                     flag1=flag1+1
                     print("flag1: ",flag1)
                 else:
                     flag1=0	
                 print("break interno")
+                flag_save=0
                 break
             else:
                 flag2=0
-                
-            puntuaciones_MOLEMOS.append(puntuacion_MOLEMOS)
+                flag_save=1
+                puntuaciones_MOLEMOS.append(puntuacion_MOLEMOS)
 
             #descomentar para pausar en cada combinacion
             #input("Presiona una tecla para continuar...")
@@ -244,8 +253,11 @@ for comb_MOLEMOS_p1 in combinaciones_equipo_prueba[('MOLEMOS', prueba_1)]:
             
         if(flag1>1):
             print("break en p2")
-            break
+            break #avanzo a la siguietne combinacion de molemos para p1
         if(len(puntuaciones_MOLEMOS)!=0):
+            print("flag_save: ",flag_save)
+            num_comb_guardad.append(c)
+            
             puntuaciones[(comb_MOLEMOS_p1, comb_MOLEMOS_p2)] = sum(puntuaciones_MOLEMOS)/len(puntuaciones_MOLEMOS)
             print(puntuaciones[(comb_MOLEMOS_p1, comb_MOLEMOS_p2)]," ",tiempos_MOLEMOS)
         
@@ -264,10 +276,10 @@ for puntuacion in puntuaciones.values():
     if puntuacion >= puntuacion_minima_media:
         contador_combinaciones += 1
 
-print(f"Hay {contador_combinaciones} combinaciones que superan la puntuación mínima de {puntuacion_minima}")
+print(f"Hay {contador_combinaciones} combinaciones que superan la puntuación mínima de {puntuacion_minima_media}")
 
 
-
+print(num_comb_guardad)
 
 end_time=time.time()
 
