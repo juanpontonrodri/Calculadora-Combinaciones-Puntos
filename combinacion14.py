@@ -1,10 +1,13 @@
-#optimizado usdano product en la parte de los otros dos clubs
-
+import sys
 import pandas as pd
 import os
 from itertools import combinations,product
 import time
 import heapq
+
+log_file = open("output.log", "a")
+#sys.stdout = log_file
+
 
 puntuacion_minima_total=14;
 puntuacion_minima_media=15;
@@ -187,11 +190,12 @@ for comb_MOLEMOS_p1 in combinaciones_equipo_prueba[('MOLEMOS', prueba_1)]:
     flag1=0
     for comb_MOLEMOS_p2 in combinaciones_equipo_prueba[('MOLEMOS', prueba_2)]:        
         c+=1
-        print("Combinación número %d de %d %s %s" % (c, numero_combinaciones_MOLEMOS, comb_MOLEMOS_p1, comb_MOLEMOS_p2))
         puntuaciones_MOLEMOS = []
         if set(comb_MOLEMOS_p1) & set(comb_MOLEMOS_p2):
             numero_combinaciones_MOLEMOS_duplicadas=numero_combinaciones_MOLEMOS_duplicadas+1
             continue
+        print("Combinación número %d de %d %s %s" % (c, numero_combinaciones_MOLEMOS, comb_MOLEMOS_p1, comb_MOLEMOS_p2))
+
         for comb_BOIRO_p1, comb_BOIRO_p2, comb_RIAS_p1, comb_RIAS_p2 in product(combinaciones_equipo_prueba[('BOIRO', prueba_1)], combinaciones_equipo_prueba[('BOIRO', prueba_2)], combinaciones_equipo_prueba[('RIAS', prueba_1)], combinaciones_equipo_prueba[('RIAS', prueba_2)]):
             if set(comb_BOIRO_p1) & set(comb_BOIRO_p2) or set(comb_RIAS_p1) & set(comb_RIAS_p2):
                 continue
@@ -265,10 +269,20 @@ for comb_MOLEMOS_p1 in combinaciones_equipo_prueba[('MOLEMOS', prueba_1)]:
 
 # Obtener las mejores 10 combinaciones con la puntuación más alta
 mejores_combinaciones = heapq.nlargest(10, puntuaciones, key=puntuaciones.get)
-
+print("Listado de pruebas:", nombres_pruebas)
 print("\nLas mejores 10 combinaciones son:")
 for i, combinacion in enumerate(mejores_combinaciones):
     print(f"{i+1}. {combinacion} - Puntuación: {puntuaciones[combinacion]}")
+    k=0
+    for  comb in combinacion:
+        print("Prueba ",nombres_pruebas[k])
+        for nadador in comb:
+            tiempo=(diccionario['MOLEMOS'][nombres_pruebas[k]][nadador][0])
+            print(nadador,tiempo)
+        if k==1:
+            k=0
+            break
+        k=k+1    
 
 # Obtener el número de combinaciones que superan la puntuación mínima
 contador_combinaciones = 0
@@ -287,3 +301,6 @@ print()
 print("Numero de combinaciones totales: ",numero_combinaciones_totales)
 print("Numero de combinaciones MOLEMOS duplicadas: ",numero_combinaciones_MOLEMOS_duplicadas,"Total combinaciones MOLEMOS evaluadas: ",numero_combinaciones_MOLEMOS-numero_combinaciones_MOLEMOS_duplicadas)
 print("Tiempo de ejecución: ",end_time-start_time)
+
+
+log_file.close()
