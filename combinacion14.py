@@ -26,12 +26,14 @@ def calc_puntuacion(tiempos_MOLEMOS, tiempos_BOIRO, tiempos_RIAS):
     
     
     
-    
     tiempos=[]
+    
+    
     tiempos.append(sorted(tiempos_prueba1, key=lambda x: x[0]))
     tiempos.append(sorted(tiempos_prueba2, key=lambda x: x[0]))
     
     #print(tiempos)
+    
     
     puntos_MOLEMOS = [0] * 2
     puntos_BOIRO =[0] * 2
@@ -61,8 +63,16 @@ def calc_puntuacion(tiempos_MOLEMOS, tiempos_BOIRO, tiempos_RIAS):
                     puntos_RIAS[contador] += 7
                     #print("puntos rias ",puntos_RIAS)
         contador=contador+1 
-    #print(puntos_MOLEMOS[1] + puntos_MOLEMOS[0])      
+    #print(puntos_MOLEMOS[1] + puntos_MOLEMOS[0])   
     
+    #Con esto aumento el tiempo total de ejecucion en un 25%, no se q porcentaje es asociado a esta parte pero cercano   
+    """ puntuaciones = [7, 5, 4, 3, 2, 1]
+
+    puntos_MOLEMOS = [sum([puntuaciones[i] for i, nadador in enumerate(t) if nadador[1] == 'MOLEMOS']) for t in tiempos]
+    puntos_BOIRO = [sum([puntuaciones[i] for i, nadador in enumerate(t) if nadador[1] == 'BOIRO']) for t in tiempos]
+    puntos_RIAS = [sum([puntuaciones[i] for i, nadador in enumerate(t) if nadador[1] == 'RIAS']) for t in tiempos]
+
+     """
     #con dos pruebas no aprecio cambios notables de rendimiento
     """tiempos_prueba1_ordenados = sorted(tiempos_prueba1, key=lambda x: x[0])
     tiempos_prueba2_ordenados = sorted(tiempos_prueba2, key=lambda x: x[0])

@@ -7,13 +7,12 @@ Para añadir a las versiones de prubeas individuales:
 ordenadas de menor a mayor puntuacion.
 
 Medidas de optimización:
--Usar listas de comprension
+X-Usar listas de comprension:Hay un ejepmlo implementado en la funcion de calcular puntuacion, pero ha aumentado en un 25% el tiempo total de ejecucion
+
 -Modifciar las estructurasd de datos para que sean mas eficientes(usar sets en vez de listas)
 -Optimizar las sumas
--Guardado y seleccion de mejores combinaciones
--Arreglar puntuaciones para 7 puntos el primero
 -Separar diccionario en 3 diccionarios(uno por club) y luego crear listas para cada preuba en esos diccionarios
 -Ademas al pasar los tiempos a las funcionesnde alcular, puedo pasarlos de otras formas par a no iteren tanto en la propia funcion
--Variable de puntuacion minima: si no consigues la puntuacion minima, salta a la siguiente iteraccion, es decir, si con 4 pruebas no se llega al minimo se salta a la siguiente iteracion del molemos y se activa un flag, si sigue sin llegarse y el flag esta activado se salta a la siguiente iteraccion de la prueba 3 y se incrementa el flag(o decremtna si es mas comodo por el numero de prueba), si sigue sin lelgarse se salta al siguentee de la 2 etc
 -Poner q si no ganamos al boiro pase a la siguietne combinacion
--Arreglar leer de un archivo
+O-Arreglar leer de un archivo
+-Guardar los resultados en un csv y q vaya siendo con append para poder ir viendo los resultados parciales
