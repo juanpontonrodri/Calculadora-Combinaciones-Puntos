@@ -1,3 +1,6 @@
+# Description: Filtrar archivos csv de la carpeta de entrada y generar un archivo csv por prueba en la carpeta de salida
+
+
 import csv
 import os
 import re

@@ -1,3 +1,5 @@
+#Description: Eliminar todas las entradas de un archivo CSV que contengan un nombre determinado
+
 import pandas as pd
 
 # Leer el archivo CSV en un dataframe

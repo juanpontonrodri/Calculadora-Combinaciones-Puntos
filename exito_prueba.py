@@ -117,11 +117,11 @@ for filename in os.listdir(args.directorio_entrada):
         # Escritura de la tabla de resultados para la segunda parte del problema en un archivo de salida diferente
         with open(nombre_salida, 'w',encoding='utf-8', newline='') as archivo:
             writer = csv.writer(archivo)
-            writer.writerow(["Nadador 1","Tiempo1","Nadador 2","Tiempo2", "Puntuación media", "Porcentaje de victorias al BOIRO", "Puntuación mínima conseguida", "Combinación BOIRO para puntuación mínima", "Combinación RIAS para puntuación mínima"])
+            writer.writerow(["Nº","Nadador 1","Tiempo1","Nadador 2","Tiempo2", "Puntuación media", "Porcentaje de victorias al BOIRO", "Puntuación mínima conseguida", "Combinación BOIRO para puntuación mínima", "Combinación RIAS para puntuación mínima"])
             for idx, mejor_combinacion in enumerate(mejores_combinaciones_medias):
                 t=[str(n[1]) for n in mejor_combinacion[0]]
                 nadadores=[n[0] for n in mejor_combinacion[0]]
-                writer.writerow([idx+1, nadadores[0],t[0],nadadores[1],t[1], mejor_combinacion[1],mejor_combinacion[2]*100,tiempos,mejor_combinacion[3],mejor_combinacion[4],mejor_combinacion[5]])
+                writer.writerow([idx+1, nadadores[0],t[0],nadadores[1],t[1], mejor_combinacion[1],mejor_combinacion[2]*100,mejor_combinacion[3],mejor_combinacion[4],mejor_combinacion[5]])
             # Escritura de la tabla de resultados para el segundo equipo
             writer.writerow(["Combinación", "BOIRO", "Puntuación media", "Tiempos"])
             for idx2, mejor_combinacion2 in enumerate(mejores_combinaciones_medias_equipo2):

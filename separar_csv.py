@@ -1,3 +1,7 @@
+#Description: Separar un archivo CSV en varios archivos CSV, uno por cada tipo de prueba
+#Es el inverso de la operacion de unircsv.py
+#Si se comentan la linea de .drop(columns=["Prueba"]) se obtiene un archivo CSV con una columna extra con el tipo de prueba
+
 import os
 import pandas as pd
 
@@ -22,7 +26,7 @@ for tipo in prueba_tipos:
     # Obtener las filas correspondientes a este tipo de prueba
     prueba_df = df[df["Prueba"] == tipo]
     # Eliminar la columna de "Prueba" del DataFrame
-    prueba_df = prueba_df.drop(columns=["Prueba"])
+    #prueba_df = prueba_df.drop(columns=["Prueba"])
     # Crear el nombre del archivo separado
     file_name = os.path.join(directory_name, tipo + ".csv")
     # Guardar el DataFrame en un archivo separado
