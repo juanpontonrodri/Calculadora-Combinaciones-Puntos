@@ -4,9 +4,10 @@
 
 import os
 import pandas as pd
+import sys
 
 # Nombre del archivo CSV a leer
-csv_file = "series_test.csv"
+csv_file = sys.argv[1]
 
 # Nombre del directorio a crear
 directory_name = os.path.splitext(csv_file)[0] + "_sep"

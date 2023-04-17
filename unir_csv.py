@@ -1,8 +1,11 @@
+# Description: Unir archivos CSV de una carpeta en un solo archivo CSV
+
 import os
 import pandas as pd
+import sys
 
 # Directorio con los archivos CSV
-dir_path = 'series_fem/'
+dir_path = sys.argv[1]
 
 # Diccionario de orden de equipos
 order_dict = {'MOLEMOS': 1, 'BOIRO': 2, 'RIAS': 3}
