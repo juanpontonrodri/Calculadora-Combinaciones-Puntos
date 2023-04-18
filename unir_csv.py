@@ -6,7 +6,7 @@ import sys
 
 # Directorio con los archivos CSV
 dir_path = sys.argv[1]
-
+output = sys.argv[2]
 # Diccionario de orden de equipos
 order_dict = {'MOLEMOS': 1, 'BOIRO': 2, 'RIAS': 3}
 
@@ -33,4 +33,4 @@ concatenated_df = concatenated_df.sort_values(by=["Equipo_Orden", "Prueba", "Tie
 concatenated_df = concatenated_df.drop('Equipo_Orden', axis=1)
 
 # Escribir el DataFrame concatenado en un archivo CSV
-concatenated_df.to_csv('series_fem_total.csv', index=False)
+concatenated_df.to_csv(output, index=False)
