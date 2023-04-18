@@ -16,3 +16,4 @@ X-Usar listas de comprension:Hay un ejepmlo implementado en la funcion de calcul
 -Poner q si no ganamos al boiro pase a la siguietne combinacion
 O-Arreglar leer de un archivo
 -Guardar los resultados en un csv y q vaya siendo con append para poder ir viendo los resultados parciales
+-Arreglar lo de importar de excel la lista otrta vez, se exporta en csv separado por semicolones y no por comas
