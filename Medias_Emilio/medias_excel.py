@@ -1,12 +1,10 @@
 #se aplica a un directorio entero
 
 
-import argparse
 import itertools
 import csv
 import os
 import pandas as pd
-import sys
 
 
 #CODIGO PARA SEPARAR LOS ARCHIVOS DE EXCEL EN CSV
