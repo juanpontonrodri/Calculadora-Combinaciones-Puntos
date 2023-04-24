@@ -117,7 +117,7 @@ for filename in os.listdir(args.directorio_entrada):
         # Escritura de la tabla de resultados para la segunda parte del problema en un archivo de salida diferente
         with open(nombre_salida, 'w',encoding='utf-8', newline='') as archivo:
             writer = csv.writer(archivo)
-            #writer.writerow([filename])
+            writer.writerow([filename[:-12]])
             writer.writerow(["Nº","Nadador 1","Tiempo1","Nadador 2","Tiempo2", "Puntuación media", "Porcentaje de victorias al BOIRO", "Puntuación mínima conseguida", "Combinación BOIRO para puntuación mínima", "Combinación RIAS para puntuación mínima"])
             for idx, mejor_combinacion in enumerate(mejores_combinaciones_medias):
                 t=[str(n[1]) for n in mejor_combinacion[0]]
@@ -137,3 +137,24 @@ for filename in os.listdir(args.directorio_entrada):
                 tiempos=", ".join([str(n[1]) for n in mejor_combinacion3[0]])
 
                 writer.writerow([idx3+1, equipo3, mejor_combinacion3[1],tiempos]) """
+
+# Ruta de la carpeta donde se encuentran los archivos 
+carpeta = "./medias"
+
+# Lista para almacenar los nombres de los archivos 
+archivos = []
+
+# Obtener los nombres de los archivos 
+for nombre_archivo in os.listdir(carpeta):
+    if nombre_archivo.endswith('.csv'):
+        archivos.append(nombre_archivo)
+
+
+archivo_junto="./medias/medias_junto.csv"
+# Abrir un archivo nuevo donde se escribirán todas las líneas juntas
+with open(archivo_junto, 'w') as archivo_final:
+    # Recorrer cada archivo .xd y escribir sus líneas en el archivo final
+    for nombre_archivo in archivos:
+        with open(os.path.join(carpeta, nombre_archivo), 'r') as archivo:
+            lineas = archivo.readlines()
+            archivo_final.writelines(lineas)
