@@ -11,7 +11,22 @@ import sys
 
 #CODIGO PARA SEPARAR LOS ARCHIVOS DE EXCEL EN CSV
 # Nombre del archivo XLSX a leer
-xlsx_file = sys.argv[1]
+xlsx_file = "Liga_test_1.xlsx"
+
+ruta_archivo = "./medias_masc/medias_masc.csv"
+
+# Comprobar si el archivo existe
+if os.path.exists(ruta_archivo):
+    # Si el archivo existe, eliminarlo
+    os.remove(ruta_archivo)
+
+ruta_archivo = "./medias_fem/medias_fem.csv"
+
+# Comprobar si el archivo existe
+if os.path.exists(ruta_archivo):
+    # Si el archivo existe, eliminarlo
+    os.remove(ruta_archivo)
+
 
 # Nombre del directorio a crear para los datos masculinos
 directory_name_masc = os.path.splitext(xlsx_file)[0] + "_masc"
@@ -182,14 +197,6 @@ archivos = []
 for nombre_archivo in os.listdir(carpeta):
     if nombre_archivo.endswith('.csv'):
         archivos.append(nombre_archivo)
-
-
-ruta_archivo = "./medias_masc/medias_masc.csv"
-
-# Comprobar si el archivo existe
-if os.path.exists(ruta_archivo):
-    # Si el archivo existe, eliminarlo
-    os.remove(ruta_archivo)
     
     
 archivo_junto="./medias_masc/medias_masc.csv"
@@ -354,12 +361,6 @@ for nombre_archivo in os.listdir(carpeta):
     if nombre_archivo.endswith('.csv'):
         archivos.append(nombre_archivo)
 
-ruta_archivo = "./medias_fem/medias_fem.csv"
-
-# Comprobar si el archivo existe
-if os.path.exists(ruta_archivo):
-    # Si el archivo existe, eliminarlo
-    os.remove(ruta_archivo)
 
 archivo_junto="./medias_fem/medias_fem.csv"
 # Abrir un archivo nuevo donde se escribirán todas las líneas juntas
