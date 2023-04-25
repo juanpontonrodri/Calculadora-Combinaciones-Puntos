@@ -1,24 +1,31 @@
-#se aplica a un directorio entero
+#En medias_fem o _masc se almacena los documentos de resultados de medias
+#En liga test1 se almacenan los documetnos fruto de separar las pagainas del excel por pruebas
 
-
+#instalar pandas y openpyxl
 import itertools
 import csv
 import os
 import pandas as pd
+import sys
+#la primera es del ejectautuable la segunda de donde se ejecuta el script
+#ruta_ejecucion = os.path.dirname(sys.executable)
+ruta_ejecucion=os.path.abspath(os.getcwd())
+ruta_medias_masc=ruta_ejecucion + "/medias_masc"
+ruta_medias_fem=ruta_ejecucion + "/medias_fem"
 
-
+print("Ruta de ejecución: " + ruta_ejecucion)
 #CODIGO PARA SEPARAR LOS ARCHIVOS DE EXCEL EN CSV
 # Nombre del archivo XLSX a leer
 xlsx_file = "Liga_test_1.xlsx"
 
-ruta_archivo = "./medias_masc/medias_masc.csv"
+ruta_archivo = ruta_ejecucion + "/medias_masc/medias_masc.csv"
 
 # Comprobar si el archivo existe
 if os.path.exists(ruta_archivo):
     # Si el archivo existe, eliminarlo
     os.remove(ruta_archivo)
 
-ruta_archivo = "./medias_fem/medias_fem.csv"
+ruta_archivo = ruta_ejecucion + "/medias_fem/medias_fem.csv"
 
 # Comprobar si el archivo existe
 if os.path.exists(ruta_archivo):
@@ -27,13 +34,15 @@ if os.path.exists(ruta_archivo):
 
 
 # Nombre del directorio a crear para los datos masculinos
-directory_name_masc = os.path.splitext(xlsx_file)[0] + "_masc"
+directory_name_masc = ruta_ejecucion+"/"+ xlsx_file[:-5] + "_masc"
+print(directory_name_masc)
 # Crear el directorio si no existe
 if not os.path.exists(directory_name_masc):
     os.makedirs(directory_name_masc)
 
 # Nombre del directorio a crear para los datos femeninos
-directory_name_fem = os.path.splitext(xlsx_file)[0] + "_fem"
+directory_name_fem = ruta_ejecucion+"/"+ xlsx_file[:-5] + "_fem"
+print(directory_name_fem)
 # Crear el directorio si no existe
 if not os.path.exists(directory_name_fem):
     os.makedirs(directory_name_fem)
@@ -61,13 +70,13 @@ for tipo in prueba_tipos_fem:
 # Create a list to store the output file paths
 output_files = []
 
-if not os.path.exists("./medias_masc"):
-    os.makedirs("./medias_masc")
+if not os.path.exists(ruta_medias_masc):
+    os.makedirs(ruta_medias_masc)
 
 for filename in os.listdir(directory_name_masc):
     if filename.endswith(".csv"):
         archivo_entrada = os.path.join(directory_name_masc, filename)
-        nombre_salida = os.path.join("./medias_masc", os.path.splitext(filename)[0] + "_salida.csv")
+        nombre_salida = os.path.join(ruta_medias_masc, os.path.splitext(filename)[0] + "_salida.csv")
         output_files.append(nombre_salida)
 
         # Lectura de tiempos de archivo CSV
@@ -186,23 +195,23 @@ for filename in os.listdir(directory_name_masc):
                 writer.writerow([idx3+1, equipo3, mejor_combinacion3[1],tiempos]) """
 
 # Ruta de la carpeta donde se encuentran los archivos 
-carpeta = "./medias_masc"
+
 
 # Lista para almacenar los nombres de los archivos 
 archivos = []
 
 # Obtener los nombres de los archivos 
-for nombre_archivo in os.listdir(carpeta):
+for nombre_archivo in os.listdir(ruta_medias_masc):
     if nombre_archivo.endswith('.csv'):
         archivos.append(nombre_archivo)
     
     
-archivo_junto="./medias_masc/medias_masc.csv"
+archivo_junto=ruta_medias_masc+"/medias_masc.csv"
 # Abrir un archivo nuevo donde se escribirán todas las líneas juntas
 with open(archivo_junto, 'w') as archivo_final:
     # Recorrer cada archivo .xd y escribir sus líneas en el archivo final
     for nombre_archivo in archivos:
-        with open(os.path.join(carpeta, nombre_archivo), 'r') as archivo:
+        with open(os.path.join(ruta_medias_masc, nombre_archivo), 'r') as archivo:
             lineas = archivo.readlines()
             archivo_final.writelines(lineas)
             
@@ -224,13 +233,13 @@ with open(archivo_junto, 'w') as archivo_final:
 # Create a list to store the output file paths
 output_files = []
 
-if not os.path.exists("./medias_fem"):
-    os.makedirs("./medias_fem")
+if not os.path.exists(ruta_medias_fem):
+    os.makedirs(ruta_medias_fem)
 
 for filename in os.listdir(directory_name_fem):
     if filename.endswith(".csv"):
         archivo_entrada = os.path.join(directory_name_fem, filename)
-        nombre_salida = os.path.join("./medias_fem", os.path.splitext(filename)[0] + "_salida.csv")
+        nombre_salida = os.path.join(ruta_medias_fem, os.path.splitext(filename)[0] + "_salida.csv")
         output_files.append(nombre_salida)
 
         # Lectura de tiempos de archivo CSV
@@ -349,22 +358,22 @@ for filename in os.listdir(directory_name_fem):
                 writer.writerow([idx3+1, equipo3, mejor_combinacion3[1],tiempos]) """
 
 # Ruta de la carpeta donde se encuentran los archivos 
-carpeta = "./medias_fem"
+
 
 # Lista para almacenar los nombres de los archivos 
 archivos = []
 
 # Obtener los nombres de los archivos 
-for nombre_archivo in os.listdir(carpeta):
+for nombre_archivo in os.listdir(ruta_medias_fem):
     if nombre_archivo.endswith('.csv'):
         archivos.append(nombre_archivo)
 
 
-archivo_junto="./medias_fem/medias_fem.csv"
+archivo_junto=ruta_medias_fem+ "/medias_fem.csv"
 # Abrir un archivo nuevo donde se escribirán todas las líneas juntas
 with open(archivo_junto, 'w') as archivo_final:
     # Recorrer cada archivo .xd y escribir sus líneas en el archivo final
     for nombre_archivo in archivos:
-        with open(os.path.join(carpeta, nombre_archivo), 'r') as archivo:
+        with open(os.path.join(ruta_medias_fem, nombre_archivo), 'r') as archivo:
             lineas = archivo.readlines()
             archivo_final.writelines(lineas)
