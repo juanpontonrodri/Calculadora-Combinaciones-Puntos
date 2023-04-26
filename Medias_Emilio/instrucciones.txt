@@ -1,3 +1,5 @@
-librerias: pandas y openpyxl
+librerias: pandas y openpyxl y xlwings
 El excel 1 lleva la barra para windows y el excel 2 la barra del 7 para linux
 El medias_excel_1 lleva la barra para windows y el media excel 2 para linux
+Para compilar:
+pyinstaller --onefile --console --name Medias_Windows.exe --clean main.py 
