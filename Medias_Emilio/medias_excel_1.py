@@ -7,7 +7,9 @@ import itertools
 import csv
 import os
 import pandas as pd
-import sys
+import xlwings as xw
+
+
 #la primera es del ejectautuable la segunda de donde se ejecuta el script
 #ruta_ejecucion = os.path.dirname(sys.executable)
 ruta_ejecucion=os.path.abspath(os.getcwd())
@@ -15,55 +17,41 @@ ruta_medias_masc=ruta_ejecucion + "\\medias_masc"
 ruta_medias_fem=ruta_ejecucion + "\\medias_fem"
 
 print("Ruta de ejecución: " + ruta_ejecucion)
-#CODIGO PARA SEPARAR LOS ARCHIVOS DE EXCEL EN CSV
-# Nombre del archivo XLSX a leer
+
+# Name of the Excel file to read
 xlsx_file = "Liga_test_1.xlsx"
 
-ruta_archivo = ruta_ejecucion + "\\medias_masc\\medias_masc.csv"
+# Open the Excel file using xlwings
+wb = xw.Book(os.path.join(ruta_ejecucion, xlsx_file))
 
-# Comprobar si el archivo existe
-if os.path.exists(ruta_archivo):
-    # Si el archivo existe, eliminarlo
-    os.remove(ruta_archivo)
-
-ruta_archivo = ruta_ejecucion + "\\medias_fem\\medias_fem.csv"
-
-# Comprobar si el archivo existe
-if os.path.exists(ruta_archivo):
-    # Si el archivo existe, eliminarlo
-    os.remove(ruta_archivo)
-
-
-# Nombre del directorio a crear para los datos masculinos
-directory_name_masc = ruta_ejecucion+"\\"+ xlsx_file[:-5] + "_masc"
-print(directory_name_masc)
-# Crear el directorio si no existe
+# Read the data from the "series_masc" sheet and save it to CSV files
+directory_name_masc = os.path.join(ruta_ejecucion, xlsx_file[:-5] + "_masc")
 if not os.path.exists(directory_name_masc):
     os.makedirs(directory_name_masc)
-
-# Nombre del directorio a crear para los datos femeninos
-directory_name_fem = ruta_ejecucion+"\\"+ xlsx_file[:-5] + "_fem"
-print(directory_name_fem)
-# Crear el directorio si no existe
-if not os.path.exists(directory_name_fem):
-    os.makedirs(directory_name_fem)
-
-# Leer el archivo XLSX y guardar los datos masculinos en un archivo CSV separado para cada tipo de prueba
-df_masc = pd.read_excel(xlsx_file, sheet_name="series_masc")
+    
+sheet_masc = wb.sheets["series_masc"]
+df_masc = sheet_masc.used_range.options(pd.DataFrame, header=1, index=False).value
 prueba_tipos_masc = df_masc["Prueba"].unique()
 for tipo in prueba_tipos_masc:
     prueba_df = df_masc[df_masc["Prueba"] == tipo]
     file_name = os.path.join(directory_name_masc, tipo + ".csv")
     prueba_df.to_csv(file_name, index=False)
 
-# Leer el archivo XLSX y guardar los datos femeninos en un archivo CSV separado para cada tipo de prueba
-df_fem = pd.read_excel(xlsx_file, sheet_name="series_fem")
+# Read the data from the "series_fem" sheet and save it to CSV files
+directory_name_fem = os.path.join(ruta_ejecucion, xlsx_file[:-5] + "_fem")
+if not os.path.exists(directory_name_fem):
+    os.makedirs(directory_name_fem)
+    
+sheet_fem = wb.sheets["series_fem"]
+df_fem = sheet_fem.used_range.options(pd.DataFrame, header=1, index=False).value
 prueba_tipos_fem = df_fem["Prueba"].unique()
 for tipo in prueba_tipos_fem:
     prueba_df = df_fem[df_fem["Prueba"] == tipo]
     file_name = os.path.join(directory_name_fem, tipo + ".csv")
     prueba_df.to_csv(file_name, index=False)
-  
+
+# Close the Excel file
+#wb.close()
   
 #CODIGO PARA CALCULAR LAS MEDIAS DE LOS ARCHIVOS CSV MASCULINO
 
@@ -79,10 +67,10 @@ for filename in os.listdir(directory_name_masc):
         archivo_entrada = os.path.join(directory_name_masc, filename)
         nombre_salida = os.path.join(ruta_medias_masc, os.path.splitext(filename)[0] + "_salida.csv")
         output_files.append(nombre_salida)
-
+        print("Archivo de entrada: " + archivo_entrada)
         # Lectura de tiempos de archivo CSV
         equipos = {}
-        with open(archivo_entrada, newline='') as archivo:
+        with open(archivo_entrada, newline='', encoding='utf-8') as archivo:
             lector = csv.DictReader(archivo)
             for fila in lector:
                 nombre = fila['Nombre']
@@ -209,10 +197,10 @@ for nombre_archivo in os.listdir(ruta_medias_masc):
     
 archivo_junto=ruta_medias_masc+"\\medias_masc.csv"
 # Abrir un archivo nuevo donde se escribirán todas las líneas juntas
-with open(archivo_junto, 'w') as archivo_final:
+with open(archivo_junto, 'w',encoding='utf-8') as archivo_final:
     # Recorrer cada archivo .xd y escribir sus líneas en el archivo final
     for nombre_archivo in archivos:
-        with open(os.path.join(ruta_medias_masc, nombre_archivo), 'r') as archivo:
+        with open(os.path.join(ruta_medias_masc, nombre_archivo), 'r', encoding='utf-8') as archivo:
             lineas = archivo.readlines()
             archivo_final.writelines(lineas)
             
@@ -245,7 +233,7 @@ for filename in os.listdir(directory_name_fem):
 
         # Lectura de tiempos de archivo CSV
         equipos = {}
-        with open(archivo_entrada, newline='') as archivo:
+        with open(archivo_entrada, newline='', encoding='utf-8') as archivo:
             lector = csv.DictReader(archivo)
             for fila in lector:
                 nombre = fila['Nombre']
@@ -372,9 +360,9 @@ for nombre_archivo in os.listdir(ruta_medias_fem):
 
 archivo_junto=ruta_medias_fem+ "\\medias_fem.csv"
 # Abrir un archivo nuevo donde se escribirán todas las líneas juntas
-with open(archivo_junto, 'w') as archivo_final:
+with open(archivo_junto, 'w', encoding='utf-8') as archivo_final:
     # Recorrer cada archivo .xd y escribir sus líneas en el archivo final
     for nombre_archivo in archivos:
-        with open(os.path.join(ruta_medias_fem, nombre_archivo), 'r') as archivo:
+        with open(os.path.join(ruta_medias_fem, nombre_archivo), 'r', encoding='utf-8') as archivo:
             lineas = archivo.readlines()
             archivo_final.writelines(lineas)
