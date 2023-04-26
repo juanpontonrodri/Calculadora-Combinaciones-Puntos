@@ -1,18 +1,3 @@
-Neceistas instalar pyhton y las 4 librerias que uso en el programa.
-Hay un script que se llama instalar_python.sh que deberia funcionarte en mac.
-Para instalarlo en mac es solo abrir una terminal en la carpeta donde tengas el script.
-Escribir en la terminal: chmod +x instalar_python.sh
-Y luego escribr:  ./instalar_python.sh
-
-Si no te funciona o te da algun error avisame y lo miramos por videollamda.
-
-Si conseguiste instalar esto el programa funciona de la siguiente forma:
--Abre el documento de excel y ahi puedes ver 4 hojas con informacion.
--Para cambiar datos tienes q cambiar los tiempos q quieras en las dos primeras hojas y guardar el documento
--Abres un terminal en esta carpeta y escribes: pyhton3 medias_excel.py
--Esperas unos segundos y ya se calculan otra vez todas las series
--Luego en el excel vas a las hojas de medias y arriba seleccionas la opcion de consultas(en mi caso es la ultima del menu) y luego en actualizar. En el menu tambiene esta la opcion de datos y ahi hay otra opcino de actualizar, no se si es lo mismo o no.
--Despues de esto deberias de ver los resultados actualizados.
--Repite el proceso las veces q quieras
-
-Para instalarlo en windows es mejor mirarse un tutorial que es mas jodido
+librerias: pandas y openpyxl
+El excel 1 lleva la barra para windows y el excel 2 la barra del 7 para linux
+El medias_excel_1 lleva la barra para windows y el media excel 2 para linux
