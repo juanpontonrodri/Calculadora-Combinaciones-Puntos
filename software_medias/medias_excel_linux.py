@@ -16,7 +16,7 @@ ruta_medias_fem=ruta_ejecucion + "/medias_fem"
 print("Ruta de ejecución: " + ruta_ejecucion)
 #CODIGO PARA SEPARAR LOS ARCHIVOS DE EXCEL EN CSV
 # Nombre del archivo XLSX a leer
-xlsx_file = "Liga_test_2.xlsx"
+xlsx_file = "Liga_test_linux.xlsx"
 
 ruta_archivo = ruta_ejecucion + "/medias_masc/medias_masc.csv"
 
