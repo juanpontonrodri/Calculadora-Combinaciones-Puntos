@@ -1,0 +1,339 @@
+###Diccionario creado###
+###Combinaciones creadas###
+Combinación número 10 de 225 ('CONDE VARELA, DAVID', 'SUAREZ FERNÁNDEZ, SANTIAGO') ('PONTON RODRIGUEZ, JUAN', 'MARTINEZ ARGIZ, DAVID')
+#No llega al minimo, flag2: 1
+break interno
+Combinación número 11 de 225 ('CONDE VARELA, DAVID', 'SUAREZ FERNÁNDEZ, SANTIAGO') ('PONTON RODRIGUEZ, JUAN', 'REGUEIRA MOURE, ANDER')
+#No llega al minimo, flag2: 2
+flag1:  1
+break interno
+Combinación número 12 de 225 ('CONDE VARELA, DAVID', 'SUAREZ FERNÁNDEZ, SANTIAGO') ('PONTON RODRIGUEZ, JUAN', 'PONTON RODRIGUEZ, JAVIER')
+#No llega al minimo, flag2: 3
+flag1:  2
+break interno
+break en p2
+Combinación número 18 de 225 ('CONDE VARELA, DAVID', 'MARTINEZ ARGIZ, DAVID') ('SUAREZ FERNÁNDEZ, SANTIAGO', 'PONTON RODRIGUEZ, JUAN')
+flag_save:  1
+20.310556714262795   [[23443, 25669], [3216, 3364]]
+Combinación número 20 de 225 ('CONDE VARELA, DAVID', 'MARTINEZ ARGIZ, DAVID') ('SUAREZ FERNÁNDEZ, SANTIAGO', 'REGUEIRA MOURE, ANDER')
+flag_save:  1
+18.027161880314456   [[23443, 25669], [3216, 3978]]
+Combinación número 21 de 225 ('CONDE VARELA, DAVID', 'MARTINEZ ARGIZ, DAVID') ('SUAREZ FERNÁNDEZ, SANTIAGO', 'PONTON RODRIGUEZ, JAVIER')
+flag_save:  1
+17.866292315097063   [[23443, 25669], [3216, 4176]]
+Combinación número 23 de 225 ('CONDE VARELA, DAVID', 'MARTINEZ ARGIZ, DAVID') ('PONTON RODRIGUEZ, JUAN', 'REGUEIRA MOURE, ANDER')
+#No llega al minimo, flag2: 1
+break interno
+Combinación número 24 de 225 ('CONDE VARELA, DAVID', 'MARTINEZ ARGIZ, DAVID') ('PONTON RODRIGUEZ, JUAN', 'PONTON RODRIGUEZ, JAVIER')
+#No llega al minimo, flag2: 2
+flag1:  1
+break interno
+Combinación número 27 de 225 ('CONDE VARELA, DAVID', 'MARTINEZ ARGIZ, DAVID') ('REGUEIRA MOURE, ANDER', 'PONTON RODRIGUEZ, JAVIER')
+#No llega al minimo, flag2: 3
+flag1:  2
+break interno
+break en p2
+Combinación número 33 de 225 ('CONDE VARELA, DAVID', 'LOSADA TORRES, ISAAC') ('SUAREZ FERNÁNDEZ, SANTIAGO', 'PONTON RODRIGUEZ, JUAN')
+flag_save:  1
+18.95859136852238   [[23443, 32288], [3216, 3364]]
+Combinación número 34 de 225 ('CONDE VARELA, DAVID', 'LOSADA TORRES, ISAAC') ('SUAREZ FERNÁNDEZ, SANTIAGO', 'MARTINEZ ARGIZ, DAVID')
+#No llega al minimo, flag2: 1
+break interno
+flag_save:  0
+14.6   [[23443, 32288], [3216, 3528]]
+Combinación número 35 de 225 ('CONDE VARELA, DAVID', 'LOSADA TORRES, ISAAC') ('SUAREZ FERNÁNDEZ, SANTIAGO', 'REGUEIRA MOURE, ANDER')
+#No llega al minimo, flag2: 2
+flag1:  1
+break interno
+Combinación número 36 de 225 ('CONDE VARELA, DAVID', 'LOSADA TORRES, ISAAC') ('SUAREZ FERNÁNDEZ, SANTIAGO', 'PONTON RODRIGUEZ, JAVIER')
+#No llega al minimo, flag2: 3
+flag1:  2
+break interno
+break en p2
+Combinación número 42 de 225 ('CONDE VARELA, DAVID', 'REGUEIRA MOURE, ANDER') ('SUAREZ FERNÁNDEZ, SANTIAGO', 'PONTON RODRIGUEZ, JUAN')
+flag_save:  1
+18.6368522380876   [[23443, 33788], [3216, 3364]]
+Combinación número 43 de 225 ('CONDE VARELA, DAVID', 'REGUEIRA MOURE, ANDER') ('SUAREZ FERNÁNDEZ, SANTIAGO', 'MARTINEZ ARGIZ, DAVID')
+#No llega al minimo, flag2: 1
+break interno
+flag_save:  0
+14.6   [[23443, 33788], [3216, 3528]]
+Combinación número 45 de 225 ('CONDE VARELA, DAVID', 'REGUEIRA MOURE, ANDER') ('SUAREZ FERNÁNDEZ, SANTIAGO', 'PONTON RODRIGUEZ, JAVIER')
+#No llega al minimo, flag2: 2
+flag1:  1
+break interno
+Combinación número 46 de 225 ('CONDE VARELA, DAVID', 'REGUEIRA MOURE, ANDER') ('PONTON RODRIGUEZ, JUAN', 'MARTINEZ ARGIZ, DAVID')
+#No llega al minimo, flag2: 3
+flag1:  2
+break interno
+break en p2
+Combinación número 52 de 225 ('CONDE VARELA, DAVID', 'GEGUNDE RODRIGUEZ, NOE') ('SUAREZ FERNÁNDEZ, SANTIAGO', 'PONTON RODRIGUEZ, JUAN')
+flag_save:  1
+18.6368522380876   [[23443, 33916], [3216, 3364]]
+Combinación número 53 de 225 ('CONDE VARELA, DAVID', 'GEGUNDE RODRIGUEZ, NOE') ('SUAREZ FERNÁNDEZ, SANTIAGO', 'MARTINEZ ARGIZ, DAVID')
+#No llega al minimo, flag2: 1
+break interno
+flag_save:  0
+14.6   [[23443, 33916], [3216, 3528]]
+Combinación número 54 de 225 ('CONDE VARELA, DAVID', 'GEGUNDE RODRIGUEZ, NOE') ('SUAREZ FERNÁNDEZ, SANTIAGO', 'REGUEIRA MOURE, ANDER')
+#No llega al minimo, flag2: 2
+flag1:  1
+break interno
+Combinación número 55 de 225 ('CONDE VARELA, DAVID', 'GEGUNDE RODRIGUEZ, NOE') ('SUAREZ FERNÁNDEZ, SANTIAGO', 'PONTON RODRIGUEZ, JAVIER')
+#No llega al minimo, flag2: 3
+flag1:  2
+break interno
+break en p2
+Combinación número 57 de 225 ('SUAREZ FERNÁNDEZ, SANTIAGO', 'MARTINEZ ARGIZ, DAVID') ('CONDE VARELA, DAVID', 'PONTON RODRIGUEZ, JUAN')
+flag_save:  1
+19.51864270816621   [[24153, 25669], [3146, 3364]]
+Combinación número 59 de 225 ('SUAREZ FERNÁNDEZ, SANTIAGO', 'MARTINEZ ARGIZ, DAVID') ('CONDE VARELA, DAVID', 'REGUEIRA MOURE, ANDER')
+#No llega al minimo, flag2: 1
+break interno
+Combinación número 60 de 225 ('SUAREZ FERNÁNDEZ, SANTIAGO', 'MARTINEZ ARGIZ, DAVID') ('CONDE VARELA, DAVID', 'PONTON RODRIGUEZ, JAVIER')
+#No llega al minimo, flag2: 2
+flag1:  1
+break interno
+Combinación número 66 de 225 ('SUAREZ FERNÁNDEZ, SANTIAGO', 'MARTINEZ ARGIZ, DAVID') ('PONTON RODRIGUEZ, JUAN', 'REGUEIRA MOURE, ANDER')
+#No llega al minimo, flag2: 3
+flag1:  2
+break interno
+break en p2
+Combinación número 68 de 225 ('SUAREZ FERNÁNDEZ, SANTIAGO', 'LOSADA TORRES, ISAAC') ('CONDE VARELA, DAVID', 'PONTON RODRIGUEZ, JUAN')
+#No llega al minimo, flag2: 1
+break interno
+flag_save:  0
+17.33010870649247   [[24153, 32288], [3146, 3364]]
+Combinación número 69 de 225 ('SUAREZ FERNÁNDEZ, SANTIAGO', 'LOSADA TORRES, ISAAC') ('CONDE VARELA, DAVID', 'MARTINEZ ARGIZ, DAVID')
+#No llega al minimo, flag2: 2
+flag1:  1
+break interno
+Combinación número 70 de 225 ('SUAREZ FERNÁNDEZ, SANTIAGO', 'LOSADA TORRES, ISAAC') ('CONDE VARELA, DAVID', 'REGUEIRA MOURE, ANDER')
+#No llega al minimo, flag2: 3
+flag1:  2
+break interno
+break en p2
+Combinación número 72 de 225 ('SUAREZ FERNÁNDEZ, SANTIAGO', 'REGUEIRA MOURE, ANDER') ('CONDE VARELA, DAVID', 'PONTON RODRIGUEZ, JUAN')
+#No llega al minimo, flag2: 1
+break interno
+flag_save:  0
+17.14091951730328   [[24153, 33788], [3146, 3364]]
+Combinación número 73 de 225 ('SUAREZ FERNÁNDEZ, SANTIAGO', 'REGUEIRA MOURE, ANDER') ('CONDE VARELA, DAVID', 'MARTINEZ ARGIZ, DAVID')
+#No llega al minimo, flag2: 2
+flag1:  1
+break interno
+Combinación número 75 de 225 ('SUAREZ FERNÁNDEZ, SANTIAGO', 'REGUEIRA MOURE, ANDER') ('CONDE VARELA, DAVID', 'PONTON RODRIGUEZ, JAVIER')
+#No llega al minimo, flag2: 3
+flag1:  2
+break interno
+break en p2
+Combinación número 77 de 225 ('SUAREZ FERNÁNDEZ, SANTIAGO', 'GEGUNDE RODRIGUEZ, NOE') ('CONDE VARELA, DAVID', 'PONTON RODRIGUEZ, JUAN')
+#No llega al minimo, flag2: 1
+break interno
+flag_save:  0
+17.14091951730328   [[24153, 33916], [3146, 3364]]
+Combinación número 78 de 225 ('SUAREZ FERNÁNDEZ, SANTIAGO', 'GEGUNDE RODRIGUEZ, NOE') ('CONDE VARELA, DAVID', 'MARTINEZ ARGIZ, DAVID')
+#No llega al minimo, flag2: 2
+flag1:  1
+break interno
+Combinación número 79 de 225 ('SUAREZ FERNÁNDEZ, SANTIAGO', 'GEGUNDE RODRIGUEZ, NOE') ('CONDE VARELA, DAVID', 'REGUEIRA MOURE, ANDER')
+#No llega al minimo, flag2: 3
+flag1:  2
+break interno
+break en p2
+Combinación número 80 de 225 ('MARTINEZ ARGIZ, DAVID', 'LOSADA TORRES, ISAAC') ('CONDE VARELA, DAVID', 'SUAREZ FERNÁNDEZ, SANTIAGO')
+flag_save:  1
+17.991480827851756   [[25669, 32288], [3146, 3216]]
+Combinación número 81 de 225 ('MARTINEZ ARGIZ, DAVID', 'LOSADA TORRES, ISAAC') ('CONDE VARELA, DAVID', 'PONTON RODRIGUEZ, JUAN')
+#No llega al minimo, flag2: 1
+break interno
+flag_save:  0
+16.81350354044081   [[25669, 32288], [3146, 3364]]
+Combinación número 83 de 225 ('MARTINEZ ARGIZ, DAVID', 'LOSADA TORRES, ISAAC') ('CONDE VARELA, DAVID', 'REGUEIRA MOURE, ANDER')
+#No llega al minimo, flag2: 2
+flag1:  1
+break interno
+Combinación número 84 de 225 ('MARTINEZ ARGIZ, DAVID', 'LOSADA TORRES, ISAAC') ('CONDE VARELA, DAVID', 'PONTON RODRIGUEZ, JAVIER')
+#No llega al minimo, flag2: 3
+flag1:  2
+break interno
+break en p2
+Combinación número 85 de 225 ('MARTINEZ ARGIZ, DAVID', 'REGUEIRA MOURE, ANDER') ('CONDE VARELA, DAVID', 'SUAREZ FERNÁNDEZ, SANTIAGO')
+flag_save:  1
+17.669741697416974   [[25669, 33788], [3146, 3216]]
+Combinación número 86 de 225 ('MARTINEZ ARGIZ, DAVID', 'REGUEIRA MOURE, ANDER') ('CONDE VARELA, DAVID', 'PONTON RODRIGUEZ, JUAN')
+#No llega al minimo, flag2: 1
+break interno
+flag_save:  0
+16.62431435125162   [[25669, 33788], [3146, 3364]]
+Combinación número 89 de 225 ('MARTINEZ ARGIZ, DAVID', 'REGUEIRA MOURE, ANDER') ('CONDE VARELA, DAVID', 'PONTON RODRIGUEZ, JAVIER')
+#No llega al minimo, flag2: 2
+flag1:  1
+break interno
+Combinación número 90 de 225 ('MARTINEZ ARGIZ, DAVID', 'REGUEIRA MOURE, ANDER') ('SUAREZ FERNÁNDEZ, SANTIAGO', 'PONTON RODRIGUEZ, JUAN')
+#No llega al minimo, flag2: 1
+break interno
+flag_save:  0
+16.62431435125162   [[25669, 33788], [3216, 3364]]
+Combinación número 93 de 225 ('MARTINEZ ARGIZ, DAVID', 'REGUEIRA MOURE, ANDER') ('SUAREZ FERNÁNDEZ, SANTIAGO', 'PONTON RODRIGUEZ, JAVIER')
+#No llega al minimo, flag2: 2
+flag1:  1
+break interno
+Combinación número 96 de 225 ('MARTINEZ ARGIZ, DAVID', 'REGUEIRA MOURE, ANDER') ('PONTON RODRIGUEZ, JUAN', 'PONTON RODRIGUEZ, JAVIER')
+#No llega al minimo, flag2: 3
+flag1:  2
+break interno
+break en p2
+Combinación número 97 de 225 ('MARTINEZ ARGIZ, DAVID', 'GEGUNDE RODRIGUEZ, NOE') ('CONDE VARELA, DAVID', 'SUAREZ FERNÁNDEZ, SANTIAGO')
+flag_save:  1
+17.669741697416974   [[25669, 33916], [3146, 3216]]
+Combinación número 98 de 225 ('MARTINEZ ARGIZ, DAVID', 'GEGUNDE RODRIGUEZ, NOE') ('CONDE VARELA, DAVID', 'PONTON RODRIGUEZ, JUAN')
+#No llega al minimo, flag2: 1
+break interno
+flag_save:  0
+16.62431435125162   [[25669, 33916], [3146, 3364]]
+Combinación número 100 de 225 ('MARTINEZ ARGIZ, DAVID', 'GEGUNDE RODRIGUEZ, NOE') ('CONDE VARELA, DAVID', 'REGUEIRA MOURE, ANDER')
+#No llega al minimo, flag2: 2
+flag1:  1
+break interno
+Combinación número 101 de 225 ('MARTINEZ ARGIZ, DAVID', 'GEGUNDE RODRIGUEZ, NOE') ('CONDE VARELA, DAVID', 'PONTON RODRIGUEZ, JAVIER')
+#No llega al minimo, flag2: 3
+flag1:  2
+break interno
+break en p2
+Combinación número 102 de 225 ('LOSADA TORRES, ISAAC', 'REGUEIRA MOURE, ANDER') ('CONDE VARELA, DAVID', 'SUAREZ FERNÁNDEZ, SANTIAGO')
+#No llega al minimo, flag2: 1
+break interno
+flag_save:  0
+16.054054054054053   [[32288, 33788], [3146, 3216]]
+Combinación número 103 de 225 ('LOSADA TORRES, ISAAC', 'REGUEIRA MOURE, ANDER') ('CONDE VARELA, DAVID', 'PONTON RODRIGUEZ, JUAN')
+#No llega al minimo, flag2: 1
+break interno
+flag_save:  0
+14.675   [[32288, 33788], [3146, 3364]]
+Combinación número 104 de 225 ('LOSADA TORRES, ISAAC', 'REGUEIRA MOURE, ANDER') ('CONDE VARELA, DAVID', 'MARTINEZ ARGIZ, DAVID')
+#No llega al minimo, flag2: 2
+flag1:  1
+break interno
+Combinación número 106 de 225 ('LOSADA TORRES, ISAAC', 'REGUEIRA MOURE, ANDER') ('CONDE VARELA, DAVID', 'PONTON RODRIGUEZ, JAVIER')
+#No llega al minimo, flag2: 3
+flag1:  2
+break interno
+break en p2
+Combinación número 107 de 225 ('LOSADA TORRES, ISAAC', 'GEGUNDE RODRIGUEZ, NOE') ('CONDE VARELA, DAVID', 'SUAREZ FERNÁNDEZ, SANTIAGO')
+#No llega al minimo, flag2: 1
+break interno
+flag_save:  0
+16.054054054054053   [[32288, 33916], [3146, 3216]]
+Combinación número 108 de 225 ('LOSADA TORRES, ISAAC', 'GEGUNDE RODRIGUEZ, NOE') ('CONDE VARELA, DAVID', 'PONTON RODRIGUEZ, JUAN')
+#No llega al minimo, flag2: 1
+break interno
+flag_save:  0
+14.675   [[32288, 33916], [3146, 3364]]
+Combinación número 109 de 225 ('LOSADA TORRES, ISAAC', 'GEGUNDE RODRIGUEZ, NOE') ('CONDE VARELA, DAVID', 'MARTINEZ ARGIZ, DAVID')
+#No llega al minimo, flag2: 2
+flag1:  1
+break interno
+Combinación número 110 de 225 ('LOSADA TORRES, ISAAC', 'GEGUNDE RODRIGUEZ, NOE') ('CONDE VARELA, DAVID', 'REGUEIRA MOURE, ANDER')
+#No llega al minimo, flag2: 3
+flag1:  2
+break interno
+break en p2
+Combinación número 111 de 225 ('REGUEIRA MOURE, ANDER', 'GEGUNDE RODRIGUEZ, NOE') ('CONDE VARELA, DAVID', 'SUAREZ FERNÁNDEZ, SANTIAGO')
+#No llega al minimo, flag2: 1
+break interno
+flag_save:  0
+15.864864864864865   [[33788, 33916], [3146, 3216]]
+Combinación número 112 de 225 ('REGUEIRA MOURE, ANDER', 'GEGUNDE RODRIGUEZ, NOE') ('CONDE VARELA, DAVID', 'PONTON RODRIGUEZ, JUAN')
+#No llega al minimo, flag2: 1
+break interno
+flag_save:  0
+14.675   [[33788, 33916], [3146, 3364]]
+Combinación número 113 de 225 ('REGUEIRA MOURE, ANDER', 'GEGUNDE RODRIGUEZ, NOE') ('CONDE VARELA, DAVID', 'MARTINEZ ARGIZ, DAVID')
+#No llega al minimo, flag2: 2
+flag1:  1
+break interno
+Combinación número 115 de 225 ('REGUEIRA MOURE, ANDER', 'GEGUNDE RODRIGUEZ, NOE') ('CONDE VARELA, DAVID', 'PONTON RODRIGUEZ, JAVIER')
+#No llega al minimo, flag2: 3
+flag1:  2
+break interno
+break en p2
+Listado de pruebas: ['200_Braza_masc', '50_Braza_masc']
+
+Las mejores 10 combinaciones son:
+1. (('CONDE VARELA, DAVID', 'MARTINEZ ARGIZ, DAVID'), ('SUAREZ FERNÁNDEZ, SANTIAGO', 'PONTON RODRIGUEZ, JUAN')) - Puntuación: 20.310556714262795
+Prueba  200_Braza_masc
+CONDE VARELA, DAVID 23443
+MARTINEZ ARGIZ, DAVID 25669
+Prueba  50_Braza_masc
+SUAREZ FERNÁNDEZ, SANTIAGO 3216
+PONTON RODRIGUEZ, JUAN 3364
+2. (('SUAREZ FERNÁNDEZ, SANTIAGO', 'MARTINEZ ARGIZ, DAVID'), ('CONDE VARELA, DAVID', 'PONTON RODRIGUEZ, JUAN')) - Puntuación: 19.51864270816621
+Prueba  200_Braza_masc
+SUAREZ FERNÁNDEZ, SANTIAGO 24153
+MARTINEZ ARGIZ, DAVID 25669
+Prueba  50_Braza_masc
+CONDE VARELA, DAVID 3146
+PONTON RODRIGUEZ, JUAN 3364
+3. (('CONDE VARELA, DAVID', 'LOSADA TORRES, ISAAC'), ('SUAREZ FERNÁNDEZ, SANTIAGO', 'PONTON RODRIGUEZ, JUAN')) - Puntuación: 18.95859136852238
+Prueba  200_Braza_masc
+CONDE VARELA, DAVID 23443
+LOSADA TORRES, ISAAC 32288
+Prueba  50_Braza_masc
+SUAREZ FERNÁNDEZ, SANTIAGO 3216
+PONTON RODRIGUEZ, JUAN 3364
+4. (('CONDE VARELA, DAVID', 'REGUEIRA MOURE, ANDER'), ('SUAREZ FERNÁNDEZ, SANTIAGO', 'PONTON RODRIGUEZ, JUAN')) - Puntuación: 18.6368522380876
+Prueba  200_Braza_masc
+CONDE VARELA, DAVID 23443
+REGUEIRA MOURE, ANDER 33788
+Prueba  50_Braza_masc
+SUAREZ FERNÁNDEZ, SANTIAGO 3216
+PONTON RODRIGUEZ, JUAN 3364
+5. (('CONDE VARELA, DAVID', 'GEGUNDE RODRIGUEZ, NOE'), ('SUAREZ FERNÁNDEZ, SANTIAGO', 'PONTON RODRIGUEZ, JUAN')) - Puntuación: 18.6368522380876
+Prueba  200_Braza_masc
+CONDE VARELA, DAVID 23443
+GEGUNDE RODRIGUEZ, NOE 33916
+Prueba  50_Braza_masc
+SUAREZ FERNÁNDEZ, SANTIAGO 3216
+PONTON RODRIGUEZ, JUAN 3364
+6. (('CONDE VARELA, DAVID', 'MARTINEZ ARGIZ, DAVID'), ('SUAREZ FERNÁNDEZ, SANTIAGO', 'REGUEIRA MOURE, ANDER')) - Puntuación: 18.027161880314456
+Prueba  200_Braza_masc
+CONDE VARELA, DAVID 23443
+MARTINEZ ARGIZ, DAVID 25669
+Prueba  50_Braza_masc
+SUAREZ FERNÁNDEZ, SANTIAGO 3216
+REGUEIRA MOURE, ANDER 3978
+7. (('MARTINEZ ARGIZ, DAVID', 'LOSADA TORRES, ISAAC'), ('CONDE VARELA, DAVID', 'SUAREZ FERNÁNDEZ, SANTIAGO')) - Puntuación: 17.991480827851756
+Prueba  200_Braza_masc
+MARTINEZ ARGIZ, DAVID 25669
+LOSADA TORRES, ISAAC 32288
+Prueba  50_Braza_masc
+CONDE VARELA, DAVID 3146
+SUAREZ FERNÁNDEZ, SANTIAGO 3216
+8. (('CONDE VARELA, DAVID', 'MARTINEZ ARGIZ, DAVID'), ('SUAREZ FERNÁNDEZ, SANTIAGO', 'PONTON RODRIGUEZ, JAVIER')) - Puntuación: 17.866292315097063
+Prueba  200_Braza_masc
+CONDE VARELA, DAVID 23443
+MARTINEZ ARGIZ, DAVID 25669
+Prueba  50_Braza_masc
+SUAREZ FERNÁNDEZ, SANTIAGO 3216
+PONTON RODRIGUEZ, JAVIER 4176
+9. (('MARTINEZ ARGIZ, DAVID', 'REGUEIRA MOURE, ANDER'), ('CONDE VARELA, DAVID', 'SUAREZ FERNÁNDEZ, SANTIAGO')) - Puntuación: 17.669741697416974
+Prueba  200_Braza_masc
+MARTINEZ ARGIZ, DAVID 25669
+REGUEIRA MOURE, ANDER 33788
+Prueba  50_Braza_masc
+CONDE VARELA, DAVID 3146
+SUAREZ FERNÁNDEZ, SANTIAGO 3216
+10. (('MARTINEZ ARGIZ, DAVID', 'GEGUNDE RODRIGUEZ, NOE'), ('CONDE VARELA, DAVID', 'SUAREZ FERNÁNDEZ, SANTIAGO')) - Puntuación: 17.669741697416974
+Prueba  200_Braza_masc
+MARTINEZ ARGIZ, DAVID 25669
+GEGUNDE RODRIGUEZ, NOE 33916
+Prueba  50_Braza_masc
+CONDE VARELA, DAVID 3146
+SUAREZ FERNÁNDEZ, SANTIAGO 3216
+Hay 20 combinaciones que superan la puntuación mínima de 15
+[18, 20, 21, 33, 34, 42, 43, 52, 53, 57, 68, 72, 77, 80, 81, 85, 86, 90, 97, 98, 102, 103, 107, 108, 111, 112]
+
+Numero de combinaciones totales:  212625
+Numero de combinaciones MOLEMOS duplicadas:  55 Total combinaciones MOLEMOS evaluadas:  170
+Tiempo de ejecución:  17.480571269989014

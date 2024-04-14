@@ -8,7 +8,7 @@ archivo_entrada = sys.argv[1]
 df = pd.read_csv(archivo_entrada)
 
 # Crear una lista con los nombres que se desean eliminar
-nombres_a_eliminar = ["PEREZ TIERRA, ISMAEL", "VALCARCE DOMINGUEZ, PABLO", "PEREZ TIERRA, DANIEL", "MARTINEZ MARINO, ANDRES", "RODRIGUEZ SANCHEZ, MIGUEL"]
+#nombres_a_eliminar = ["PEREZ TIERRA, ISMAEL", "VALCARCE DOMINGUEZ, PABLO", "PEREZ TIERRA, DANIEL", "MARTINEZ MARINO, ANDRES", "RODRIGUEZ SANCHEZ, MIGUEL"]
 #nombre_a_eliminar = ["SENRA RODRIGUEZ, LAURA","VARELA MENDEZ, LUCIA","VARELA MENDEZ, CLARA","MENDES GONZALEZ, SOFIA","GARCIA SANCHEZ, ISABEL"]
 
 # Filtrar las filas que contengan los nombres a eliminar

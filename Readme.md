@@ -2,6 +2,13 @@ Los equipos son 1: MOLEMOS, 2: Boiro, 3: Rias Baixas
 Los archivos equiposx.csv son los descargados de la fegan de los 10 mejores tiempos de cada prueba
 El arhivo filtrocsv.py filtra las entradas equipo{x}.csv y saca un uncio output tiempos.csv ordenados por equipo.
 
+## Como actualizar para nuevos equipos
+- Descargar los 10 mejores tiempos de cada prueba de la fegan y meterlos en tiempos_fem y tiempos_masc con el formato existente (Distancia_Estilo_sexo_numeroequipo.csv)
+- Ejecutar filtrocsv.py
+
+
+
+
 Para añadir a las versiones de prubeas individuales:
 -Seleccionar el numero de combinacion del equipo 1 de la lista de medias y que te de el outpt de todas las combinaciones posibles con esos dos nadadores
 ordenadas de menor a mayor puntuacion.

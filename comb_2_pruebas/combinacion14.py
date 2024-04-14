@@ -6,7 +6,7 @@ import time
 import heapq
 
 log_file = open("output.log", "a")
-#sys.stdout = log_file
+sys.stdout = log_file
 
 
 puntuacion_minima_total=14;
