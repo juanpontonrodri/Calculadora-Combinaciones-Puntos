@@ -1,4 +1,4 @@
-Los equipos son 1: MOLEMOS, 2: Boiro, 3: Rias Baixas
+Los equipos son 1: MOLEMOS, 2: CIDSANTI, 3: NTNARON
 
 
 ## Como actualizar para nuevos equipos

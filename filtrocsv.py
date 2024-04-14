@@ -49,6 +49,6 @@ for group_name, file_names in groups.items():
                         if i==0:
                             writer.writerow([row[1], tiempo, "MOLEMOS", nombre_prueba])
                         if i==1:
-                            writer.writerow([row[1], tiempo, "BOIRO",nombre_prueba])
+                            writer.writerow([row[1], tiempo, "CIDSANTI",nombre_prueba])
                         if i==2:
-                            writer.writerow([row[1], tiempo, "RIAS",nombre_prueba])
+                            writer.writerow([row[1], tiempo, "NTNARON",nombre_prueba])
