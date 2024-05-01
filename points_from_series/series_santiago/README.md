@@ -1,0 +1,1 @@
+Este codigo parece funcionar a la perfeccion con las series del santiago
