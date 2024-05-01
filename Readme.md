@@ -1,4 +1,4 @@
-Los equipos son 1: MOLEMOS, 2: CIDSANTI, 3: NTNARON
+Los equipos son 1: MOLEMOS, 2: CIDSANTI, 3: CASINOC
 
 
 ## Como actualizar para nuevos equipos

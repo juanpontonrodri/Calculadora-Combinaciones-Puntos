@@ -51,4 +51,4 @@ for group_name, file_names in groups.items():
                         if i==1:
                             writer.writerow([row[1], tiempo, "CIDSANTI",nombre_prueba])
                         if i==2:
-                            writer.writerow([row[1], tiempo, "NTNARON",nombre_prueba])
+                            writer.writerow([row[1], tiempo, "CASINOC",nombre_prueba])
