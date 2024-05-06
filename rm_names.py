@@ -8,11 +8,11 @@ archivo_entrada = sys.argv[1]
 df = pd.read_csv(archivo_entrada)
 
 # Crear una lista con los nombres que se desean eliminar
-#nombres_a_eliminar = ["PEREZ TIERRA, ISMAEL", "VALCARCE DOMINGUEZ, PABLO", "PEREZ TIERRA, DANIEL", "MARTINEZ MARINO, ANDRES", "RODRIGUEZ SANCHEZ, MIGUEL"]
+nombres_a_eliminar = ["VALCARCE DOMINGUEZ, PABLO", "PEREZ TIERRA, DANIEL", "MARTINEZ MARINO, ANDRES", "PASSARETTI PEREIRA, ALEJANDRO"]
 #nombre_a_eliminar = ["SENRA RODRIGUEZ, LAURA","VARELA MENDEZ, LUCIA","VARELA MENDEZ, CLARA","MENDES GONZALEZ, SOFIA","GARCIA SANCHEZ, ISABEL"]
 
 # Filtrar las filas que contengan los nombres a eliminar
 df = df[~df['Nombre'].isin(nombres_a_eliminar)]
 
 # Guardar el dataframe resultante en un nuevo archivo CSV
-df.to_csv('series_masc_total.csv', index=False)
+df.to_csv('series_masc_limpias.csv', index=False)

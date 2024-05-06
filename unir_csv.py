@@ -8,7 +8,7 @@ import sys
 dir_path = sys.argv[1]
 output = sys.argv[2]
 # Diccionario de orden de equipos
-order_dict = {'MOLEMOS': 1, 'CIDSANTI': 2, 'CASINOC': 3}
+order_dict = {'MOLEMOS': 1, 'CIDSANTI': 2, 'NTNARON': 3}
 
 # Lista para guardar los DataFrames de cada archivo CSV
 dfs = []

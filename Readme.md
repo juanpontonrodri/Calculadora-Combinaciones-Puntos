@@ -1,4 +1,4 @@
-Los equipos son 1: MOLEMOS, 2: CIDSANTI, 3: CASINOC
+Los equipos son 1: MOLEMOS, 2: CIDSANTI, 3: NTNARON
 
 
 ## Como actualizar para nuevos equipos
@@ -14,6 +14,7 @@ Los equipos son 1: MOLEMOS, 2: CIDSANTI, 3: CASINOC
 - series_masc.csv se debe de usar para crear las hojas en el excel de medias
 - Se eliminaran las hojas series_masc y series_fem del excel y se crearan de nuevo esas hojas dandole a obtener datos de csv y seleccionando los nuevos csvs
 - Al importarlos se debe de seleccionar la opcion de obtener formato de las primeras lineas
+- Nos aseguramos que las hojas se llaman series_masc y series_fem
 - Los proximos pasos se encuentran en el readme de la carpeta software_medias
 
 

@@ -174,7 +174,7 @@ for filename in os.listdir(directory_name_masc):
         with open(nombre_salida, 'w',encoding='utf-8', newline='') as archivo:
             writer = csv.writer(archivo)
             writer.writerow([filename[:-4]])
-            writer.writerow(["Nº","Nadador 1","Tiempo1","Nadador 2","Tiempo2", "Puntuación media", "Porcentaje de victorias al CIDSANTI", "Puntuación mínima conseguida", "Combinación CIDSANTI para puntuación mínima", "Combinación CASINOC para puntuación mínima"])
+            writer.writerow(["Nº","Nadador 1","Tiempo1","Nadador 2","Tiempo2", "Puntuación media", "Porcentaje de victorias al CIDSANTI", "Puntuación mínima conseguida", "Combinación CIDSANTI para puntuación mínima", "Combinación NTNARON para puntuación mínima"])
             for idx, mejor_combinacion in enumerate(mejores_combinaciones_medias):
                 t=[str(n[1]) for n in mejor_combinacion[0]]
                 nadadores=[n[0] for n in mejor_combinacion[0]]
@@ -337,7 +337,7 @@ for filename in os.listdir(directory_name_fem):
         with open(nombre_salida, 'w',encoding='utf-8', newline='') as archivo:
             writer = csv.writer(archivo)
             writer.writerow([filename[:-4]])
-            writer.writerow(["Nº","Nadador 1","Tiempo1","Nadador 2","Tiempo2", "Puntuación media", "Porcentaje de victorias al BOIRO", "Puntuación mínima conseguida", "Combinación BOIRO para puntuación mínima", "Combinación RIAS para puntuación mínima"])
+            writer.writerow(["Nº","Nadador 1","Tiempo1","Nadador 2","Tiempo2", "Puntuación media", "Porcentaje de victorias al CIDSANTI", "Puntuación mínima conseguida", "Combinación CIDSANTI para puntuación mínima", "Combinación NTNARON para puntuación mínima"])
             for idx, mejor_combinacion in enumerate(mejores_combinaciones_medias):
                 t=[str(n[1]) for n in mejor_combinacion[0]]
                 nadadores=[n[0] for n in mejor_combinacion[0]]
