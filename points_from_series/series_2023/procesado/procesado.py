@@ -27,7 +27,7 @@ def process_swim_results(csv_path):
     data.columns = [col.strip().capitalize() for col in data.columns]
     
     # Convert time to seconds for sorting
-    data['Tiempo'] = data['Tiempo'].apply(time_to_seconds)
+    #data['Tiempo'] = data['Tiempo'].apply(time_to_seconds)
     
     # Sort data by Prueba and Tiempo
     data.sort_values(by=['Prueba', 'Tiempo'], inplace=True)

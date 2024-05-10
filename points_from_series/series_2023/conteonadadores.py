@@ -15,5 +15,5 @@ def count_swimmers_by_event_and_club(input_file_path, output_file_path):
 # count_swimmers_by_event_and_club("path_to_your_input_file.csv", "path_to_your_output_file.csv")
 
 # La llamada a la función está comentada para evitar su ejecución accidental
-count_result = count_swimmers_by_event_and_club("filtrado.csv", "conteo_nadadores.csv")
+count_result = count_swimmers_by_event_and_club("series_segundos.csv", "conteo_nadadores.csv")
 print(count_result)
