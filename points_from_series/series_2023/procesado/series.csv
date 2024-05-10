@@ -1,10 +1,4 @@
 Nombre;Club;Tiempo;Prueba
-ORECHIA, Agustín;CIDSANTI;56.05;100 m Mariposa Masculino
-PONTON RODRIGUEZ, Javier;MOLEMOS;58.66;100 m Mariposa Masculino
-SUAREZ FERNÁNDEZ, Santiago;MOLEMOS;61.79;100 m Mariposa Masculino
-PORTELA LEIRA, Miguel;NTNARON;64.68;100 m Mariposa Masculino
-NEIRA LOPEZ, Francisco;CIDSANTI;64.95;100 m Mariposa Masculino
-PORTELA LEIRA, David;NTNARON;72.59;100 m Mariposa Masculino
 GUDÍN PÉREZ, Andrea;MOLEMOS;74.14;100 m Braza Feminino
 LOPEZ RAMUDO, Icia;NTNARON;78.2;100 m Braza Feminino
 BLANCO IGLESIAS, Carmen;CIDSANTI;80.85;100 m Braza Feminino
@@ -23,18 +17,54 @@ LOUREIRO AMOR, Belen Martina;NTNARON;74.6;100 m Espalda Feminino
 ALONSO GARCÍA, María;CIDSANTI;75.27;100 m Espalda Feminino
 GARCIA VAZQUEZ, Marta;MOLEMOS;76.74;100 m Espalda Feminino
 PITA SÁNCHEZ, Ainara;NTNARON;3599.99;100 m Espalda Feminino
+ARIAS FRANCO, Odei;MOLEMOS;58.89;100 m Espalda Masculino
+REY MUNIN, Tomas;CIDSANTI;59.77;100 m Espalda Masculino
+PEREZ TIERRA, Ismael;MOLEMOS;60.78;100 m Espalda Masculino
+SUAREZ RIPOLL, Xian;CIDSANTI;63.74;100 m Espalda Masculino
+MEIZOSO FERNANDEZ, Daniel;NTNARON;64.09;100 m Espalda Masculino
+OTERO LAMAS, Alejandro;NTNARON;74.06;100 m Espalda Masculino
+GONZÁLEZ TOJO, Raquel;CIDSANTI;60.97;100 m Libre Femenino
+VICENTINI, Sofia Chiara;CIDSANTI;61.52;100 m Libre Femenino
+GONZALEZ BLANCO, Patricia;MOLEMOS;61.74;100 m Libre Femenino
+LÓPEZ BOUZA, Andrea;NTNARON;67.35;100 m Libre Femenino
+PRATS MOREIRAS, Ximena;MOLEMOS;69.86;100 m Libre Femenino
+LOUREIRO AMOR, Belen Martina;NTNARON;3540.0;100 m Libre Femenino
 PONTON RODRIGUEZ, Javier;MOLEMOS;51.76;100 m Libre Masculino
 BALLESTER IBAÑEZ, Edgar;MOLEMOS;55.36;100 m Libre Masculino
 LOUREIRO GONZALEZ, Roi;CIDSANTI;55.93;100 m Libre Masculino
 SUAREZ RIPOLL, Xian;CIDSANTI;56.25;100 m Libre Masculino
 PORTELA LEIRA, David;NTNARON;62.62;100 m Libre Masculino
 PIÑEIRO VAZQUEZ, Alvaro;NTNARON;64.91;100 m Libre Masculino
+VICENTINI, Sofia Chiara;CIDSANTI;65.51;100 m Mariposa Feminino
+CAAMAÑO LOPEZ, Xiana;CIDSANTI;72.12;100 m Mariposa Feminino
+PEREZ MARTINEZ, Sara;NTNARON;75.77;100 m Mariposa Feminino
+GONZALEZ LOSADA, Antia;MOLEMOS;78.45;100 m Mariposa Feminino
+CASTRO DE LA FUENTE, Uxia;MOLEMOS;82.46000000000001;100 m Mariposa Feminino
+LÓPEZ BOUZA, Andrea;NTNARON;3540.0;100 m Mariposa Feminino
+ORECHIA, Agustín;CIDSANTI;56.05;100 m Mariposa Masculino
+PONTON RODRIGUEZ, Javier;MOLEMOS;58.66;100 m Mariposa Masculino
+SUAREZ FERNÁNDEZ, Santiago;MOLEMOS;61.79;100 m Mariposa Masculino
+PORTELA LEIRA, Miguel;NTNARON;64.68;100 m Mariposa Masculino
+NEIRA LOPEZ, Francisco;CIDSANTI;64.95;100 m Mariposa Masculino
+PORTELA LEIRA, David;NTNARON;72.59;100 m Mariposa Masculino
 MOURE DOVAL, Jose;MOLEMOS;980.13;1500 m Libre Masculino
 QUIÑOY VEIGA, Alvaro;CIDSANTI;1114.93;1500 m Libre Masculino
 CASTRO FERNANDEZ, Julio;CIDSANTI;1135.96;1500 m Libre Masculino
 PEREIRA MARTINEZ, Noel;MOLEMOS;1166.04;1500 m Libre Masculino
 AMENEDO MARTÍNEZ, Ander;NTNARON;1166.82;1500 m Libre Masculino
 PIÑEIRO VAZQUEZ, Alvaro;NTNARON;1223.88;1500 m Libre Masculino
+GUDÍN PÉREZ, Andrea;MOLEMOS;165.18;200 m Braza Femenino
+LOPEZ RAMUDO, Icia;NTNARON;171.5;200 m Braza Femenino
+BLANCO IGLESIAS, Carmen;CIDSANTI;171.56;200 m Braza Femenino
+ARIAS PACHECO, Elena;MOLEMOS;188.71;200 m Braza Femenino
+MUNIN CANDAL, Tania;CIDSANTI;203.5;200 m Braza Femenino
+LÓPEZ RODRÍGUEZ, Maia;NTNARON;3540.0;200 m Braza Femenino
+PARCERO AREOSO, Xoel;CIDSANTI;142.91;200 m Braza Masculino
+GRAÑA DEL SOLAR, Miguel;NTNARON;146.15;200 m Braza Masculino
+ALBES ALVARIÑO, David;NTNARON;152.96;200 m Braza Masculino
+SUAREZ FERNÁNDEZ, Santiago;MOLEMOS;159.57;200 m Braza Masculino
+MUNIN CANDAL, Eric;CIDSANTI;168.8;200 m Braza Masculino
+ARGIZ MARTÍNEZ, David;MOLEMOS;171.28;200 m Braza Masculino
 ALBES ALVARIÑO, Paula;NTNARON;149.3;200 m Espalda Feminino
 SUAREZ RIPOLL, Lia;CIDSANTI;150.81;200 m Espalda Feminino
 ALONSO GARCÍA, María;CIDSANTI;161.82999999999998;200 m Espalda Feminino
@@ -65,6 +95,18 @@ ALCALDE BALADO, TANIA;CIDSANTI;145.7;200 m Libre Feminino
 LÓPEZ BOUZA, ANDREA;NTNARON;146.71;200 m Libre Feminino
 CANEIRO ALBES, BERTA;NTNARON;150.05;200 m Libre Feminino
 CAPLEA MIHAELA, VERONICA;MOLEMOS;161.95;200 m Libre Feminino
+BALLESTER IBAÑEZ, Edgar;MOLEMOS;125.12;200 m Libre Masculino
+GUERRA SAAVEDRA, Uxio;CIDSANTI;126.45;200 m Libre Masculino
+CARBALLEDA ABEIJÓN, Andrés;CIDSANTI;126.51;200 m Libre Masculino
+LOPEZ RODRIGUEZ, Hugo;MOLEMOS;133.25;200 m Libre Masculino
+PORTELA LEIRA, David;NTNARON;140.37;200 m Libre Masculino
+PIÑEIRO VAZQUEZ, Alejandro;NTNARON;142.99;200 m Libre Masculino
+VICENTINI, Sofia Chiara;CIDSANTI;149.23;200 m Mariposa Femenino
+CAAMAÑO LOPEZ, Xiana;CIDSANTI;160.65;200 m Mariposa Femenino
+ALBES ALVARIÑO, Paula;NTNARON;162.75;200 m Mariposa Femenino
+CASTRO DE LA FUENTE, Uxia;MOLEMOS;179.14;200 m Mariposa Femenino
+PEREZ MARTINEZ, Sara;NTNARON;183.5;200 m Mariposa Femenino
+ENRIQUEZ BUJAN, Candela;MOLEMOS;197.45;200 m Mariposa Femenino
 MOURE DOVAL, Jose;MOLEMOS;129.52;200 m Mariposa Masculino
 ORECHIA, Agustín;CIDSANTI;131.53;200 m Mariposa Masculino
 PONTON RODRIGUEZ, Juan;MOLEMOS;149.96;200 m Mariposa Masculino
@@ -101,6 +143,12 @@ MOLEMOS 02;MOLEMOS;290.97;4x100 m Estilos Feminino
 NTNARON 01;NTNARON;295.59000000000003;4x100 m Estilos Feminino
 MOLEMOS 01;MOLEMOS;296.62;4x100 m Estilos Feminino
 NTNARON 02;NTNARON;298.4;4x100 m Estilos Feminino
+MOLEMOS 01;MOLEMOS;212.32;4x100 m Estilos Masculino
+MOLEMOS 02;MOLEMOS;213.07;4x100 m Estilos Masculino
+CIDSANTI 01;CIDSANTI;221.61;4x100 m Estilos Masculino
+NTNARON 01;NTNARON;224.44;4x100 m Estilos Masculino
+CIDSANTI 02;CIDSANTI;227.63;4x100 m Estilos Masculino
+NTNARON 02;NTNARON;231.03;4x100 m Estilos Masculino
 CIDSANTI 01;CIDSANTI;252.67;4x100 m Libre Feminino
 CIDSANTI 02;CIDSANTI;254.7;4x100 m Libre Feminino
 MOLEMOS 01;MOLEMOS;261.68;4x100 m Libre Feminino
@@ -137,12 +185,6 @@ NTNARON 01;NTNARON;101.08;4x50 m Libre Masculino
 CIDSANTI 01;CIDSANTI;101.12;4x50 m Libre Masculino
 CIDSANTI 02;CIDSANTI;101.4;4x50 m Libre Masculino
 NTNARON 02;NTNARON;104.6;4x50 m Libre Masculino
-PONTON RODRIGUEZ, Javier;MOLEMOS;24.7;50 m Mariposa Masculino
-PEREZ TIERRA, Ismael;MOLEMOS;25.66;50 m Mariposa Masculino
-NEIRA LOPEZ, Francisco;CIDSANTI;28.5;50 m Mariposa Masculino
-PORTELA LEIRA, Miguel;NTNARON;29.21;50 m Mariposa Masculino
-PORTELA LEIRA, David;NTNARON;31.61;50 m Mariposa Masculino
-PASSARETTI PEREIRA, Alejandro;CIDSANTI;3540.0;50 m Mariposa Masculino
 GUDÍN PÉREZ, Andrea;MOLEMOS;33.83;50 m Braza Feminino
 LOPEZ RAMUDO, Icia;NTNARON;35.91;50 m Braza Feminino
 BLANCO IGLESIAS, Carmen;CIDSANTI;36.38;50 m Braza Feminino
@@ -179,63 +221,21 @@ PONTON RODRIGUEZ, Juan;MOLEMOS;24.41;50 m Libre Masculino
 ORTIZ ANEIROS, Lorenzo;NTNARON;24.87;50 m Libre Masculino
 GRACIA CARBAJO, Miguel;NTNARON;24.92;50 m Libre Masculino
 LOUREIRO GONZALEZ, Roi;CIDSANTI;25.19;50 m Libre Masculino
-GONZALEZ RODRIGUEZ, Maria;CIDSANTI;612.05;800 m Libre Feminino
-LEDO ESCUDERO, Mara;MOLEMOS;621.87;800 m Libre Feminino
-ALCALDE BALADO, Tania;CIDSANTI;643.52;800 m Libre Feminino
-PEREZ MARTINEZ, Sara;NTNARON;644.38;800 m Libre Feminino
-CASTRO DE LA FUENTE, Alla;MOLEMOS;724.04;800 m Libre Feminino
-ALBES ALVARIÑO, Paula;NTNARON;3540.0;800 m Libre Feminino
-SUAREZ RIPOLL, Xian;CIDSANTI;63.74;100 m Espalda Masculino
-OTERO LAMAS, Alejandro;NTNARON;74.06;100 m Espalda Masculino
-ARIAS FRANCO, Odei;MOLEMOS;58.89;100 m Espalda Masculino
-REY MUNIN, Tomas;CIDSANTI;59.77;100 m Espalda Masculino
-PEREZ TIERRA, Ismael;MOLEMOS;60.78;100 m Espalda Masculino
-MEIZOSO FERNANDEZ, Daniel;NTNARON;64.09;100 m Espalda Masculino
-VICENTINI, Sofia Chiara;CIDSANTI;65.51;100 m Mariposa Feminino
-CAAMAÑO LOPEZ, Xiana;CIDSANTI;72.12;100 m Mariposa Feminino
-PEREZ MARTINEZ, Sara;NTNARON;75.77;100 m Mariposa Feminino
-GONZALEZ LOSADA, Antia;MOLEMOS;78.45;100 m Mariposa Feminino
-CASTRO DE LA FUENTE, Uxia;MOLEMOS;82.46000000000001;100 m Mariposa Feminino
-LÓPEZ BOUZA, Andrea;NTNARON;3540.0;100 m Mariposa Feminino
-GUDÍN PÉREZ, Andrea;MOLEMOS;165.18;200 m Braza Femenino
-LOPEZ RAMUDO, Icia;NTNARON;171.5;200 m Braza Femenino
-BLANCO IGLESIAS, Carmen;CIDSANTI;171.56;200 m Braza Femenino
-ARIAS PACHECO, Elena;MOLEMOS;188.71;200 m Braza Femenino
-MUNIN CANDAL, Tania;CIDSANTI;203.5;200 m Braza Femenino
-LÓPEZ RODRÍGUEZ, Maia;NTNARON;3540.0;200 m Braza Femenino
-PARCERO AREOSO, Xoel;CIDSANTI;142.91;200 m Braza Masculino
-GRAÑA DEL SOLAR, Miguel;NTNARON;146.15;200 m Braza Masculino
-ALBES ALVARIÑO, David;NTNARON;152.96;200 m Braza Masculino
-SUAREZ FERNÁNDEZ, Santiago;MOLEMOS;159.57;200 m Braza Masculino
-MUNIN CANDAL, Eric;CIDSANTI;168.8;200 m Braza Masculino
-ARGIZ MARTÍNEZ, David;MOLEMOS;171.28;200 m Braza Masculino
-BALLESTER IBAÑEZ, Edgar;MOLEMOS;125.12;200 m Libre Masculino
-GUERRA SAAVEDRA, Uxio;CIDSANTI;126.45;200 m Libre Masculino
-CARBALLEDA ABEIJÓN, Andrés;CIDSANTI;126.51;200 m Libre Masculino
-LOPEZ RODRIGUEZ, Hugo;MOLEMOS;133.25;200 m Libre Masculino
-PORTELA LEIRA, David;NTNARON;140.37;200 m Libre Masculino
-PIÑEIRO VAZQUEZ, Alejandro;NTNARON;142.99;200 m Libre Masculino
-VICENTINI, Sofia Chiara;CIDSANTI;149.23;200 m Mariposa Femenino
-CAAMAÑO LOPEZ, Xiana;CIDSANTI;160.65;200 m Mariposa Femenino
-ALBES ALVARIÑO, Paula;NTNARON;162.75;200 m Mariposa Femenino
-CASTRO DE LA FUENTE, Uxia;MOLEMOS;179.14;200 m Mariposa Femenino
-PEREZ MARTINEZ, Sara;NTNARON;183.5;200 m Mariposa Femenino
-ENRIQUEZ BUJAN, Candela;MOLEMOS;197.45;200 m Mariposa Femenino
-MOLEMOS 01;MOLEMOS;212.32;4x100 m Estilos Masculino
-MOLEMOS 02;MOLEMOS;213.07;4x100 m Estilos Masculino
-CIDSANTI 01;CIDSANTI;221.61;4x100 m Estilos Masculino
-NTNARON 01;NTNARON;224.44;4x100 m Estilos Masculino
-CIDSANTI 02;CIDSANTI;227.63;4x100 m Estilos Masculino
-NTNARON 02;NTNARON;231.03;4x100 m Estilos Masculino
 VICENTINI, Sofia Chiara;CIDSANTI;29.56;50 m Mariposa Feminino
 GONZÁLEZ TOJO, Raquel;CIDSANTI;30.19;50 m Mariposa Feminino
 ARIAS PACHECO, Elena;MOLEMOS;32.24;50 m Mariposa Feminino
 GONZALEZ LOSADA, Antia;MOLEMOS;34.09;50 m Mariposa Feminino
 RIVAS TENREIRO, Arantza;NTNARON;36.34;50 m Mariposa Feminino
 GIZ CASTRO, Gisela;NTNARON;3540.0;50 m Mariposa Feminino
-GONZÁLEZ TOJO, Raquel;CIDSANTI;60.97;100 m Libre Femenino
-VICENTINI, Sofia Chiara;CIDSANTI;61.52;100 m Libre Femenino
-GONZALEZ BLANCO, Patricia;MOLEMOS;61.74;100 m Libre Femenino
-LÓPEZ BOUZA, Andrea;NTNARON;67.35;100 m Libre Femenino
-PRATS MOREIRAS, Ximena;MOLEMOS;69.86;100 m Libre Femenino
-LOUREIRO AMOR, Belen Martina;NTNARON;3540.0;100 m Libre Femenino
+PONTON RODRIGUEZ, Javier;MOLEMOS;24.7;50 m Mariposa Masculino
+PEREZ TIERRA, Ismael;MOLEMOS;25.66;50 m Mariposa Masculino
+NEIRA LOPEZ, Francisco;CIDSANTI;28.5;50 m Mariposa Masculino
+PORTELA LEIRA, Miguel;NTNARON;29.21;50 m Mariposa Masculino
+PORTELA LEIRA, David;NTNARON;31.61;50 m Mariposa Masculino
+PASSARETTI PEREIRA, Alejandro;CIDSANTI;3540.0;50 m Mariposa Masculino
+GONZALEZ RODRIGUEZ, Maria;CIDSANTI;612.05;800 m Libre Feminino
+LEDO ESCUDERO, Mara;MOLEMOS;621.87;800 m Libre Feminino
+ALCALDE BALADO, Tania;CIDSANTI;643.52;800 m Libre Feminino
+PEREZ MARTINEZ, Sara;NTNARON;644.38;800 m Libre Feminino
+CASTRO DE LA FUENTE, Alla;MOLEMOS;724.04;800 m Libre Feminino
+ALBES ALVARIÑO, Paula;NTNARON;3540.0;800 m Libre Feminino
